@@ -6,7 +6,7 @@
 **Admin Sayfası**
 ```javascript
 //Admin Sayfası
-Kullanıcı Adı: admin
+Kullanıcı_Adı: admin
 Şifre: 12345
 ```
 ---
