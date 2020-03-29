@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7a209081-c632-4557-ad02-a2c8f41d68b9" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZlD7M9xthaOQ4WwrQ2GJU6Gstv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/uploads" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\uploads" />
+      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\uploads\images" />
+      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\home\static" />
+      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\home" />
+      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\accommodation" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="hotelReservation" type="Python.DjangoServer" factoryName="Django server">
+      <module name="hotelReservation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="hotelReservation.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a209081-c632-4557-ad02-a2c8f41d68b9" name="Default Changelist" comment="" />
+      <created>1585404618648</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585404618648</updated>
+      <workItem from="1585404619971" duration="16171000" />
+      <workItem from="1585430422269" duration="1565000" />
+      <workItem from="1585482939594" duration="14011000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="178" key="#Inspections" timestamp="1585431402921">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1585431402921" />
+    <state x="709" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585429406654">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="709" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585429406654" />
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1585405160095">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585405160095" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1585489406060">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585489406060" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1585489406060">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585489406060" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1585489406060">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585489406060" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1585489406060">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585489406060" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585489406060">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585489406060" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1585489406060">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585489406060" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1585489406060">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585489406060" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1585489406060">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585489406060" />
+    <state x="590" y="373" key="Performance.Activity.Monitor" timestamp="1585409204503">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="590" y="373" key="Performance.Activity.Monitor/0.0.1920.1040@0.0.1920.1040" timestamp="1585409204503" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585427017095">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585427017095" />
+  </component>
+</project>
