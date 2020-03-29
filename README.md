@@ -1,2 +1,2 @@
-# Django---HotelResarvation
-Emre SARAÇ - Otel Rezarvasyon Projesi (Özel Konular 2)
+# Django-HotelResarvation
+##Emre SARAÇ - Otel Rezarvasyon Projesi (Özel Konular 2)
