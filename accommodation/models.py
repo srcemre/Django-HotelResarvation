@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 from django.utils.safestring import mark_safe
@@ -49,7 +50,7 @@ class Hotel(models.Model):
     phone       = models.PositiveSmallIntegerField()
     fax         = models.PositiveSmallIntegerField(blank=True,null=True)
     city        = models.CharField(max_length=30) #TODO: City için bir veri tabanı hazırlanacak.
-    detail      = models.TextField(max_length=255,blank=True)
+    detail      = RichTextUploadingField(blank=True)
     status      = models.CharField(max_length=10, choices=STATUS)
     slug        = models.SlugField()
     create_at   = models.DateTimeField(auto_now_add=True)
@@ -76,7 +77,7 @@ class Room(models.Model):
     amount      = models.IntegerField()
     person      = models.PositiveSmallIntegerField()
     bed         = models.PositiveSmallIntegerField()
-    detail      = models.TextField(max_length=255, blank=True)
+    detail      = RichTextUploadingField(blank=True)
     status      = models.CharField(max_length=10, choices=STATUS)
     slug        = models.SlugField()
     create_at   = models.DateTimeField(auto_now_add=True)

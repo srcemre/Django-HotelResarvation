@@ -1,0 +1,58 @@
+{% extends "homebase.html" %}
+
+{% block title %} Hakkımızda-{{ setting.company }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel="shortcut icon" href="{{ setting.icon.url }}" type="image/x-icon">
+{% endblock %}
+
+{% block menu %}
+    {% include "menu.html" %}
+{% endblock %}
+{% block slider %}
+
+  <section id="aa-property-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-property-header-inner">
+            <h2>Hakkımızda</h2>
+            <ol class="breadcrumb">
+            <li><a href="/">Ana Sayfa</a></li>
+            <li class="active">Hakkımızda</li>
+          </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+{% block content %}
+
+    <section id="aa-about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-about-us-area">
+            <div class="row">
+               <!-- <div class="aa-title">
+                    <h2>About Us</h2>
+                    <span></span>
+                  </div> -->
+                  {{ setting.aboutus|safe }}
+              <!-- <div class="col-md-5"></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+
+
+
