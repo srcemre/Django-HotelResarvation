@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a209081-c632-4557-ad02-a2c8f41d68b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/templates/hakkimizda.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/referanslar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accommodation/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accommodation/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotelReservation/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotelReservation/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotelReservation/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotelReservation/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,12 +82,31 @@
       <workItem from="1585430422269" duration="1565000" />
       <workItem from="1585482939594" duration="16631000" />
       <workItem from="1585505155764" duration="70000" />
-      <workItem from="1586023955445" duration="17625000" />
+      <workItem from="1586023955445" duration="17867000" />
     </task>
+    <task id="LOCAL-00001" summary="14. Videoya kadar ilerlendi">
+      <created>1586046590982</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586046590982</updated>
+    </task>
+    <task id="LOCAL-00002" summary="14. Videoya kadar ilerlendi">
+      <created>1586046693868</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586046693868</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="14. Videoya kadar ilerlendi" />
+    <option name="LAST_COMMIT_MESSAGE" value="14. Videoya kadar ilerlendi" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Inspections" timestamp="1585431402921">
@@ -111,10 +117,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585429406654" />
-    <state x="149" y="120" width="1271" height="811" key="CommitChangelistDialog2" timestamp="1586046589878">
+    <state x="149" y="120" width="1271" height="811" key="CommitChangelistDialog2" timestamp="1586046693341">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="149" y="120" width="1271" height="811" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586046589878" />
+    <state x="149" y="120" width="1271" height="811" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586046693341" />
     <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1585505166659">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -159,10 +165,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586023973104" />
-    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586046630591">
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586046700119">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586046630591" />
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586046700119" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585427017095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
