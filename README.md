@@ -1,4 +1,4 @@
-# Django-HotelResarvation (Özel Konular 2) 
+c# Django-HotelResarvation (Özel Konular 2) 
 ### Emre SARAÇ - Otel Rezarvasyon Projesi 
 
 ---
@@ -10,6 +10,12 @@ Kullanıcı_Adı: admin
 Şifre: 12345
 ```
 ---
+#### 10.04.2020
+"Django Projesi 2020 -Türkçe" Videolarından 15. videoya kadar yapıldı.
+- Django-mptt kuruldu.
+- Kategoriler yeniden güncellendi.
+- Template/menü.html kısmında "Konaklama Kategori" kısmı düzenlendi 
+
 #### 04.04.2020
 "Django Projesi 2020 -Türkçe" Videolarından 14. videoya kadar yapıldı.
 - Admin sayfasına CKEditor eklendi.
