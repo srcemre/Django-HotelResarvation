@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7a209081-c632-4557-ad02-a2c8f41d68b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/scss/modules/_sections.scss" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/scss/modules/_sections.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelReservation/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotelReservation/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +38,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../djangoBlog" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -83,6 +90,16 @@
       <workItem from="1585482939594" duration="16631000" />
       <workItem from="1585505155764" duration="70000" />
       <workItem from="1586023955445" duration="17867000" />
+      <workItem from="1586047154004" duration="196000" />
+      <workItem from="1586048155198" duration="240000" />
+      <workItem from="1586101936098" duration="116000" />
+      <workItem from="1586102177112" duration="14000" />
+      <workItem from="1586122253634" duration="254000" />
+      <workItem from="1586122707417" duration="2095000" />
+      <workItem from="1586195904265" duration="612000" />
+      <workItem from="1586197069115" duration="4750000" />
+      <workItem from="1586302420929" duration="2365000" />
+      <workItem from="1586459099419" duration="8444000" />
     </task>
     <task id="LOCAL-00001" summary="14. Videoya kadar ilerlendi">
       <created>1586046590982</created>
@@ -121,10 +138,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="149" y="120" width="1271" height="811" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586046693341" />
-    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1585505166659">
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1586302520866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585505166659" />
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586302520866" />
     <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1585504981733">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -161,10 +178,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="590" y="373" key="Performance.Activity.Monitor/0.0.1920.1040@0.0.1920.1040" timestamp="1585409204503" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586023973104">
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586459272085">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586023973104" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586459272085" />
     <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586046700119">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

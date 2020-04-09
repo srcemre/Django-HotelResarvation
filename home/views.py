@@ -3,14 +3,16 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-from accommodation.models import Hotel
+from accommodation.models import Accommodation, Category
 from home.models import Settings, ContactForm, ContactFormMessage
 
 
 def index(request):
     setting = Settings.objects.get(pk=1)
-    sliderdata = Hotel.objects.all()[:4]
+    sliderdata = Accommodation.objects.all()[:4]
+    category = Category.objects.all()
     context={'setting':setting,
+             'category':category,
              'page':'home',
              'sliderdata':sliderdata }
     return render(request, 'index.html', context)

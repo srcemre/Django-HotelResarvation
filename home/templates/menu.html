@@ -1,65 +1,94 @@
 {% load static %}
 <!-- Start menu section -->
-  <section id="aa-menu-area">
+<section id="aa-menu-area">
     <nav class="navbar navbar-default main-navbar" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- LOGO -->
-          <!-- Text based logo -->
-           <a class="navbar-brand aa-logo" href="index.html"> EMRE <span>SARAÇ</span></a>
-           <!-- Image based logo -->
-           <!-- <a class="navbar-brand aa-logo-img" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
+        <div class="container">
+            <div class="navbar-header">
+                <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- LOGO -->
+                <!-- Text based logo -->
+                <a class="navbar-brand aa-logo" href="index.html"> EMRE <span>SARAÇ</span></a>
+                <!-- Image based logo -->
+                <!-- <a class="navbar-brand aa-logo-img" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
+
+                    <!-- item  class="active" -->
+                    {% if page == 'home' %}
+                        <li class="active"><a href="/">ANA SAYFA</a></li>
+                    {% else %}
+                        <li><a href="/">ANA SAYFA</a></li>
+                    {% endif %}
+
+
+                    <!-- item -->
+                    {% if page == 'konaklama' %}
+                        <li class="dropdown active">
+                    {% else %}
+                        <li class="dropdown">
+                    {% endif %}
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="/">KONAKLAMA KATEGORİ<span class="caret"></span></a>
+
+                            {% load mptt_tags %}
+                            <ul class="dropdown-menu" role="menu" >
+                                {% recursetree category %}
+                                    <li><a href="category/{{ node.slug }}">{{ node.title }}</a></li>
+                                {% if not node.is_leaf_node %}
+                                    <ul class="children" style="margin-left:10%;">
+                                        <li>{{ children }}</li>
+                                    </ul>
+                                {% endif %}
+                            {% endrecursetree %}
+                                </li>
+
+                            </ul>
+                            <!--
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/oteller">OTELLER</a></li>
+                                <li><a href="/pansiyonlar">PANSİYONLAR</a></li>
+                                <li><a href="/apartmanlar">APARTMANLAR</a></li>
+                            </ul> -->
+                        </li>
+
+                    <!-- item -->
+                    {% if page == 'resimler' %}
+                        <li class="active"><a href="/resimler">RESİMLER</a></li>
+                    {% else %}
+                        <li><a href="/resimler">RESİMLER</a></li>
+                    {% endif %}
+
+                    <!-- item -->
+                    {% if page == 'hakkimizda' %}
+                        <li class="active"><a href="/hakkimizda">HAKKIMIZDA</a></li>
+                    {% else %}
+                        <li><a href="/hakkimizda">HAKKIMIZDA</a></li>
+                    {% endif %}
+
+                    <!-- item -->
+                    {% if page == 'referanslar' %}
+                        <li class="active"><a href="/referanslar">REFERANSLAR</a></li>
+                    {% else %}
+                        <li><a href="/referanslar">REFERANSLAR</a></li>
+                    {% endif %}
+
+                    <!-- item -->
+                    {% if page == 'iletisim' %}
+                        <li class="active"><a href="/iletisim">İLETİŞİM</a></li>
+                    {% else %}
+                        <li><a href="/iletisim">İLETİŞİM</a></li>
+                    {% endif %}
+
+                </ul>
+            </div><!--/.nav-collapse -->
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
-          <!-- class="active" -->
-            {% if page == 'home' %}
-                <li class="active"><a href="/">ANA SAYFA</a></li>
-            {% else %}
-                <li><a href="/">ANA SAYFA</a></li>
-            {% endif %}
-            {% if page == 'konaklama' %}
-                <li class="dropdown active">
-            {% else %}
-               <li class="dropdown">
-            {% endif %}
-              <a class="dropdown-toggle" data-toggle="dropdown" href="/">KONAKLAMA <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="/oteller">OTELLER</a></li>
-                <li><a href="/pansiyonlar">PANSİYONLAR</a></li>
-                <li><a href="/apartmanlar">APARTMANLAR</a></li>
-              </ul>
-            </li>
-            {% if page == 'resimler' %}
-                <li class="active"><a href="/resimler">RESİMLER</a></li>
-            {% else %}
-                <li><a href="/resimler">RESİMLER</a></li>
-            {% endif %}
-            {% if page == 'hakkimizda' %}
-                <li class="active"><a href="/hakkimizda">HAKKIMIZDA</a></li>
-            {% else %}
-                <li><a href="/hakkimizda">HAKKIMIZDA</a></li>
-            {% endif %}
-            {% if page == 'referanslar' %}
-                <li class="active"><a href="/referanslar">REFERANSLAR</a></li>
-            {% else %}
-                <li><a href="/referanslar">REFERANSLAR</a></li>
-            {% endif %}
-            {% if page == 'iletisim' %}
-                <li class="active"><a href="/iletisim">İLETİŞİM</a></li>
-            {% else %}
-                <li><a href="/iletisim">İLETİŞİM</a></li>
-            {% endif %}
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
     </nav>
-  </section>
-  <!-- End menu section -->
+</section>
+<!-- End menu section -->

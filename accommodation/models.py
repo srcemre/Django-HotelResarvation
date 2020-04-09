@@ -3,9 +3,11 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 from django.utils.safestring import mark_safe
+from mptt.fields import TreeForeignKey
+from mptt.models import MPTTModel
 
 
-class Category(models.Model):
+class Category(MPTTModel):
     STATUS = (
         ('True', 'Evet'),
         ('False', 'Hayır'),
@@ -16,18 +18,27 @@ class Category(models.Model):
     thumbnail   = models.ImageField(blank=True, upload_to='images', default='images/null.jpg')
     status      = models.CharField(max_length=10, choices=STATUS)
     slug        = models.SlugField()
-    parent      = models.ForeignKey('self', blank=True, null=True, related_name='children', on_delete=models.CASCADE)
+    parent      = TreeForeignKey('self', blank=True, null=True, related_name='children', on_delete=models.CASCADE)
     create_at   = models.DateTimeField(auto_now_add=True)
     update_at   = models.DateTimeField(auto_now=True)
 
+    class MPTTMeta:
+        #level_attr = 'mptt_level'
+        order_insertion_by = ['title']
+
     def __str__(self):
-        return self.title
+        full_path = [self.title]
+        k = self.parent
+        while k is not None:
+            full_path.append(k.title)
+            k = k.parent
+        return ' / '.join(full_path[::-1])
 
     def image_tag(self):
-        return mark_safe('<img src="{}" height="85"/>'.format(self.thumbnail.url))
+        return mark_safe('<img src="{}" width="45" height="37"/>'.format(self.thumbnail.url))
     image_tag.short_descripton = 'Image'
 
-class Hotel(models.Model):
+class Accommodation(models.Model):
     STATUS = (
         ('True', 'Evet'),
         ('False', 'Hayır'),
@@ -68,7 +79,7 @@ class Room(models.Model):
         ('True', 'Evet'),
         ('False', 'Hayır'),
     )
-    hotel       = models.ForeignKey(Hotel, on_delete=models.CASCADE)
+    hotel       = models.ForeignKey(Accommodation, on_delete=models.CASCADE)
     title       = models.CharField(max_length=150)  # charfield = uzunluk
     keywords    = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
@@ -91,7 +102,7 @@ class Room(models.Model):
     image_tag.short_descripton = 'Image'
 
 class Image(models.Model):
-    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE)
+    hotel = models.ForeignKey(Accommodation, on_delete=models.CASCADE)
     title = models.CharField(max_length=50, blank=True)
     image = models.ImageField(blank=True, upload_to='images', default='images/null.jpg')
 
