@@ -13,7 +13,7 @@
                 </button>
                 <!-- LOGO -->
                 <!-- Text based logo -->
-                <a class="navbar-brand aa-logo" href="index.html"> EMRE <span>SARAÇ</span></a>
+                <a class="navbar-brand aa-logo" href="/"> EMRE <span>SARAÇ</span></a>
                 <!-- Image based logo -->
                 <!-- <a class="navbar-brand aa-logo-img" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
             </div>
@@ -40,12 +40,14 @@
                             {% load mptt_tags %}
                             <ul class="dropdown-menu" role="menu" >
                                 {% recursetree category %}
-                                    <li><a href="category/{{ node.slug }}">{{ node.title }}</a></li>
-                                {% if not node.is_leaf_node %}
-                                    <ul class="children" style="margin-left:10%;">
-                                        <li>{{ children }}</li>
+                                    <li><a href="/category/{{ node.id }}/{{ node.slug }}">{{ node.title }}</a></li>
+                                    <ul class="children" style="margin-left:15%;">
+                                        <li>
+                                    {% if not node.is_leaf_node %}
+                                         {{ children }}
+                                    {% endif %}
+                                        </li>
                                     </ul>
-                                {% endif %}
                             {% endrecursetree %}
                                 </li>
 

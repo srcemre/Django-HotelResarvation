@@ -44,6 +44,7 @@ class Accommodation(models.Model):
         ('False', 'Hayır'),
     )
     STAR = (
+        ('0', '-'),
         ('1', '(1) *'),
         ('2', '(2) **'),
         ('3', '(3) ***'),
@@ -55,7 +56,7 @@ class Accommodation(models.Model):
     keywords    = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     thumbnail   = models.ImageField(blank=True, upload_to='images', default='images/null.jpg')
-    star        = models.CharField(max_length=1,choices=STAR)
+    star        = models.CharField(max_length=1, blank=True, choices=STAR)
     address     = models.TextField(max_length=150)
     email       = models.CharField(max_length=30)
     phone       = models.PositiveSmallIntegerField()

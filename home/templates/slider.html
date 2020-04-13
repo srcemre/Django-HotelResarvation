@@ -13,7 +13,8 @@
                     <span class="aa-top-slider-catg">{{ rs.category }}</span>
                     <h2 class="aa-top-slider-title">{{ rs.title }}</h2>
                     <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>{{ rs.address }} - {{ rs.city }}</p>
-                    <span class="aa-top-slider-off">"{{ rs.description }}" - {{ rs.star }} Stars </span>
+                    <span class="aa-top-slider-off">{{ rs.description }} {% if rs.star %} - {{ rs.star }}  Stars {% endif %} </span>
+
                     <p class="aa-top-slider-price">100$</p>
                     <a href="/accommodation/{{ rs.id }}/{{ rs.slug }}" class="aa-top-slider-btn">Detaylar <span class="fa fa-angle-double-right"></span></a>
                 </div>
@@ -21,6 +22,5 @@
             </div>
             <!-- / Top slider single slide -->
           {% endfor %}
-
     </div>
-  </section>
+</section>
