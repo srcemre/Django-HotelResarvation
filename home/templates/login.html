@@ -1,0 +1,83 @@
+
+
+{% extends "homebase.html" %}
+
+{% block title %} Login | {{ setting.company }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel="shortcut icon" href="{{ setting.icon.url }}" type="image/x-icon">
+{% endblock %}
+
+{% block content %}
+
+    <!--ARKA PLAN RESMİ -->
+    <section id="aa-signin" style="background-image: url('{{ bimage.thumbnail.url }}');">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-signin-area">
+                        <div class="aa-signin-form">
+                            <div class="aa-signin-form-title">
+                                <a class="aa-property-home" href="/">{{ setting.title }}</a>
+                                <h4>Sign in to your account</h4>
+                            </div>
+                            <form class="contactform" action="" method="post">
+                                {% csrf_token %}
+                                <div class="aa-single-field">
+                                    <label for="username">Username <span class="required">*</span></label>
+                                    <input type="text" required="required" aria-required="true" value="" name="username"
+                                           placeholder="Username">
+                                </div>
+                                <div class="aa-single-field">
+                                    <label for="password">Password <span class="required">*</span></label>
+                                    <input type="password" name="password" placeholder="********">
+                                </div>
+                                <div class="aa-single-field">
+                                    <label>
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                                <div class="alert alert-{{ message.tags }}" role="alert">
+                                                    {{ message }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </label>
+                                </div>
+                                <div class="aa-single-submit">
+                                    <input type="submit" value="LOG IN" class="aa-browse-btn" name="submit">
+                                    <p>Don't Have A Account Yet? <a href="/register">CREATE NOW!</a></p>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+{% block footer %}
+    {% load static %}
+    <!-- jQuery library -->
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <!-- <script src="{% static 'js/jquery.min.js'%}"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <!-- slick slider -->
+    <script type="text/javascript" src="{% static 'js/slick.js' %}"></script>
+    <!-- Price picker slider -->
+    <script type="text/javascript" src="{% static 'js/nouislider.js' %}"></script>
+    <!-- mixit slider -->
+    <script type="text/javascript" src="{% static 'js/jquery.mixitup.js' %}"></script>
+    <!-- Add fancyBox -->
+    <script type="text/javascript" src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+    <!-- Custom js -->
+    <script src="{% static 'js/custom.js' %}"></script>
+    </body>
+    </html>
+{% endblock %}

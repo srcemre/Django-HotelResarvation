@@ -2,12 +2,14 @@ import json
 
 from ckeditor_uploader.forms import SearchForm
 from django.contrib import messages
+from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
 from accommodation.models import Accommodation, Category, Room, Image, Comment
-from home.forms import SearchForm
+from home.forms import SearchForm, RegisterForm
 from home.models import Settings, ContactForm, ContactFormMessage
 
 
@@ -134,3 +136,52 @@ def accommodation_search_auto(request):
         data = 'fail'
     mimetype = 'application/json'
     return HttpResponse(data, mimetype)
+
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/')
+
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page.
+            return HttpResponseRedirect('/')
+        else:
+            # Return an 'invalid login' error message.
+            messages.error(request, "Kullanıcı adı veya şifre yanlış.")
+            return HttpResponseRedirect('/login')
+    setting = Settings.objects.get(pk=1)
+    bimage = Accommodation.objects.get(pk=1)
+    context = {
+        'setting': setting,
+        'bimage': bimage,
+    }
+    return render(request, 'login.html', context)
+
+
+def register_view(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = request.POST['username']
+            password = request.POST['password1']
+            user = authenticate(request, username=username, password=password)
+            login(request, user)
+            return HttpResponseRedirect('/')
+
+    form = RegisterForm()
+    setting = Settings.objects.get(pk=1)
+    bimage = Accommodation.objects.get(pk=1)
+    context = {
+        'setting': setting,
+        'bimage': bimage,
+        'form': form,
+    }
+    return render(request, 'register.html', context)

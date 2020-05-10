@@ -1,0 +1,75 @@
+{% extends "homebase.html" %}
+
+{% block title %} Register | {{ setting.company }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel="shortcut icon" href="{{ setting.icon.url }}" type="image/x-icon">
+{% endblock %}
+
+{% block content %}
+
+    <body>
+    <section id="aa-signin" style="background-image: url('{{ bimage.thumbnail.url }}');">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-signin-area">
+                        <div class="aa-signin-form">
+                            <div class="aa-signin-form-title">
+                                <a class="aa-property-home" href="/">{{ setting.title }}</a>
+                                <h4>Create your account and Stay with us</h4>
+                            </div>
+
+                            <form method="post">
+                                {% csrf_token %}
+                                {% for field in form %}
+                                    <div class="aa-single-field">
+                                        {{ field.label_tag }}
+                                        {{ field }}
+                                        {% if field.help_text %}
+                                            <small style="color: #000eff">{{ field.help_text }}</small>
+                                        {% endif %}
+                                    </div>
+                                    {% for error in field.errors %}
+                                        <div class="aa-single-field">
+                                            <p style="color: red">{{ error }}</p>
+                                        </div>
+                                    {% endfor %}
+                                {% endfor %}
+                                <div class="aa-single-submit">
+                                    <input type="submit" value="Create Account" name="submit">
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+{% block footer %}
+    {% load static %}
+    <!-- jQuery library -->
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <!-- <script src="{% static 'js/jquery.min.js'%}"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <!-- slick slider -->
+    <script type="text/javascript" src="{% static 'js/slick.js' %}"></script>
+    <!-- Price picker slider -->
+    <script type="text/javascript" src="{% static 'js/nouislider.js' %}"></script>
+    <!-- mixit slider -->
+    <script type="text/javascript" src="{% static 'js/jquery.mixitup.js' %}"></script>
+    <!-- Add fancyBox -->
+    <script type="text/javascript" src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+    <!-- Custom js -->
+    <script src="{% static 'js/custom.js' %}"></script>
+
+    </body>
+    </html>
+{% endblock %}
