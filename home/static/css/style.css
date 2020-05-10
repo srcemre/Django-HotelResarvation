@@ -3454,3 +3454,13 @@ img {
   }
   
 }
+/*==================
+	SONRADAN EKLEDİKLERİM
+====================*/
+
+.stars input{
+  float: left;
+}
+.stars label{
+  float: left;
+}

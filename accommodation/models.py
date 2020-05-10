@@ -1,7 +1,10 @@
+from django.contrib.auth.models import User
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
+from django.forms import ModelForm
+from django.urls import reverse
 from django.utils.safestring import mark_safe
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
@@ -17,7 +20,7 @@ class Category(MPTTModel):
     description = models.CharField(max_length=255)
     thumbnail   = models.ImageField(blank=True, upload_to='images', default='images/null.jpg')
     status      = models.CharField(max_length=10, choices=STATUS)
-    slug        = models.SlugField()
+    slug        = models.SlugField(null=False, unique=True)
     parent      = TreeForeignKey('self', blank=True, null=True, related_name='children', on_delete=models.CASCADE)
     create_at   = models.DateTimeField(auto_now_add=True)
     update_at   = models.DateTimeField(auto_now=True)
@@ -37,6 +40,9 @@ class Category(MPTTModel):
     def image_tag(self):
         return mark_safe('<img src="{}" width="45" height="37"/>'.format(self.thumbnail.url))
     image_tag.short_descripton = 'Image'
+
+    def get_absolute_url(self):
+        return reverse('category_detail', kwargs={'slug': self.slug})
 
 class Accommodation(models.Model):
     STATUS = (
@@ -64,7 +70,7 @@ class Accommodation(models.Model):
     city        = models.CharField(max_length=30) #TODO: City için bir veri tabanı hazırlanacak.
     detail      = RichTextUploadingField(blank=True)
     status      = models.CharField(max_length=10, choices=STATUS)
-    slug        = models.SlugField()
+    slug        = models.SlugField(null=False, unique=True)
     create_at   = models.DateTimeField(auto_now_add=True)
     update_at   = models.DateTimeField(auto_now=True)
 
@@ -74,6 +80,9 @@ class Accommodation(models.Model):
     def image_tag(self):
         return mark_safe('<img src="{}" height="85"/>'.format(self.thumbnail.url))
     image_tag.short_descripton = 'Image'
+
+    def get_absolute_url(self):
+        return reverse('accommodation_detail', kwargs={'slug': self.slug})
 
 class Room(models.Model):
     STATUS = (
@@ -91,7 +100,7 @@ class Room(models.Model):
     bed         = models.PositiveSmallIntegerField()
     detail      = RichTextUploadingField(blank=True)
     status      = models.CharField(max_length=10, choices=STATUS)
-    slug        = models.SlugField()
+    slug        = models.SlugField(null=False)
     create_at   = models.DateTimeField(auto_now_add=True)
     update_at   = models.DateTimeField(auto_now=True)
 
@@ -101,6 +110,34 @@ class Room(models.Model):
     def image_tag(self):
         return mark_safe('<img src="{}" height="85"/>'.format(self.thumbnail.url))
     image_tag.short_descripton = 'Image'
+
+    def get_absolute_url(self):
+        return reverse('room_detail', kwargs={'slug': self.slug})
+
+class Comment(models.Model):
+    STATUS = (
+        ('New', 'Yeni'),
+        ('True', 'Evet'),
+        ('False', 'Hayır'),
+    )
+
+    hotel   = models.ForeignKey(Accommodation, on_delete=models.CASCADE)
+    user    = models.ForeignKey(User, on_delete=models.CASCADE)
+    subject = models.CharField(max_length=50, blank=True)  # charfield = uzunluk
+    comment = models.CharField(max_length=200, blank=True)
+    rate    = models.IntegerField()
+    status  = models.CharField(max_length=10, choices=STATUS, default='New')
+    ip      = models.CharField(max_length=20, blank=True)
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.subject
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['subject','comment','rate']
 
 class Image(models.Model):
     hotel = models.ForeignKey(Accommodation, on_delete=models.CASCADE)

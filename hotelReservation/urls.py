@@ -21,12 +21,15 @@ from django.urls import path, include
 from home import views
 
 urlpatterns = [
-    path('',include('home.urls')),
+    path('', include('home.urls')),
+    path('accommodation/', include('accommodation.urls')),
     path('hakkimizda/', views.hakkimizda, name='hakkimizda'),
     path('referanslar/', views.referanslar, name='referanslar'),
     path('iletisim/', views.iletisim, name='iletisim'),
     path('category/<int:id>/<slug:slug>/', views.category_accommodations, name='category_accommodations'),
     path('accommodation/<int:id>/<slug:slug>/', views.accommodation_detail, name='accommodation_detail'),
+    path('search/',views.accommodation_search, name='product_search'),
+    path('search_auto/',views.accommodation_search_auto, name='accommodation_search_auto'),
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]

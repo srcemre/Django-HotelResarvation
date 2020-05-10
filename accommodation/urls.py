@@ -20,4 +20,5 @@ from accommodation import views
 
 urlpatterns = [
     path('', views.index, name='accommodation'),
+    path('addcomment/<int:id>', views.addcomment, name='addcomment'),
 ]

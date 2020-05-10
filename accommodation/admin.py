@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from mptt.admin import MPTTModelAdmin, DraggableMPTTAdmin
 
-from accommodation.models import Category, Accommodation, Room, Image
+from accommodation.models import Category, Accommodation, Room, Image, Comment
 
 
 class HotelImageInLine(admin.TabularInline):
@@ -19,17 +19,18 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ['title','status','parent','image_tag']
     list_filter  = ['status','parent']
 
-
 class HotelAdmin(admin.ModelAdmin):
     list_display = ['category','image_tag','title','star','email','phone','address','city','status']
     readonly_fields = ('image_tag',)
     list_filter  = ['category', 'star', 'city', 'status']
     inlines = [HotelImageInLine]
+    prepopulated_fields = {'slug':('title',)}
 
 class RoomAdmin(admin.ModelAdmin):
     list_display = ['hotel','image_tag','title','price','amount','person','bed','status']
     list_filter  = ['hotel', 'price', 'person', 'bed','status']
     readonly_fields = ('image_tag',)
+    prepopulated_fields = {'slug':('title',)}
 
 class CategoryAdmin2(DraggableMPTTAdmin):
 
@@ -38,6 +39,7 @@ class CategoryAdmin2(DraggableMPTTAdmin):
                     'related_products_count', 'related_products_cumulative_count')
     list_display_links = ('indented_title',)
     readonly_fields = ('image_tag',)
+    prepopulated_fields = {'slug':('title',)}
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
@@ -66,7 +68,12 @@ class CategoryAdmin2(DraggableMPTTAdmin):
         return instance.products_cumulative_count
     related_products_cumulative_count.short_description = 'Related products (in tree)'
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['subject', 'comment', 'hotel', 'user', 'status']
+    list_filter = ['status']
+
 admin.site.register(Category,CategoryAdmin2)
 admin.site.register(Accommodation,HotelAdmin)
 admin.site.register(Room,RoomAdmin)
 admin.site.register(Image,ImageAdmin)
+admin.site.register(Comment,CommentAdmin)
