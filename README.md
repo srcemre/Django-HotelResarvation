@@ -10,6 +10,13 @@ Kullanıcı_Adı: admin
 Şifre: 12345
 ```
 ---
+#### 10.05.2020
+"Django Projesi 2020 -Türkçe" Videolarından 22. videoya kadar yapıldı.
+- Yorum ve puanlama yapma
+- Ürün arama
+- Ajax Jquery ürün otomatik tamamlama
+- Otomatik slug oluşturma
+
 #### 12.04.2020
 "Django Projesi 2020 -Türkçe" Videolarından 18. videoya kadar yapıldı.
 - Katagori ürünlerini gösterme
