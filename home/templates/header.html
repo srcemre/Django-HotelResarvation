@@ -20,6 +20,8 @@
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <div class="aa-header-right">
                                 {% if user.id %}
+                                    <!-- Profile resmi -->
+                                    <img src="{{ current_user.image.url }}" height="20 px"/>
                                     <a href="/user/" class="aa-register">{{ user.username }}</a>
                                     <a href="/logout/" class="aa-login">Log Out</a>
                                 {% else %}

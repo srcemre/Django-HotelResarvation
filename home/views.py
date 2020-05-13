@@ -10,7 +10,7 @@ from django.shortcuts import render
 # Create your views here.
 from accommodation.models import Accommodation, Category, Room, Image, Comment
 from home.forms import SearchForm, RegisterForm
-from home.models import Settings, ContactForm, ContactFormMessage
+from home.models import Settings, ContactForm, ContactFormMessage, UserProfile
 
 
 def index(request):
@@ -18,19 +18,29 @@ def index(request):
     sliderdata = Accommodation.objects.all()[:4]
     category = Category.objects.all()
     accommodations = Accommodation.objects.all()[6::-1]  # Son girilenleri listeliyor.
+    current_user = request.user
+    if current_user.is_active:
+        current_user = UserProfile.objects.get(user_id=current_user.id);
+
     context = {'setting': setting,
                'category': category,
                'page': 'home',
                'accommodations': accommodations,
-               'sliderdata': sliderdata}
+               'sliderdata': sliderdata,
+               'current_user': current_user
+               }
     return render(request, 'index.html', context)
 
 
 def hakkimizda(request):
     setting = Settings.objects.get(pk=1)
     category = Category.objects.all()
+    current_user = request.user
+    if current_user.is_active:
+        current_user = UserProfile.objects.get(user_id=current_user.id);
     context = {'setting': setting,
                'category': category,
+               'current_user': current_user,
                'page': 'hakkimizda'}
     return render(request, 'hakkimizda.html', context)
 
@@ -38,13 +48,20 @@ def hakkimizda(request):
 def referanslar(request):
     setting = Settings.objects.get(pk=1)
     category = Category.objects.all()
+    current_user = request.user
+    if current_user.is_active:
+        current_user = UserProfile.objects.get(user_id=current_user.id);
     context = {'setting': setting,
                'category': category,
+               'current_user': current_user,
                'page': 'referanslar'}
     return render(request, 'referanslar.html', context)
 
 
 def iletisim(request):
+    current_user = request.user
+    if current_user.is_active:
+        current_user = UserProfile.objects.get(user_id=current_user.id);
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -64,11 +81,15 @@ def iletisim(request):
     context = {'setting': setting,
                'page': 'iletisim',
                'category': category,
+               'current_user': current_user,
                'form': form}
     return render(request, 'iletisim.html', context)
 
 
 def category_accommodations(request, id, slug):
+    current_user = request.user
+    if current_user.is_active:
+        current_user = UserProfile.objects.get(user_id=current_user.id);
     setting = Settings.objects.get(pk=1)
     categorydata = Category.objects.get(pk=id)
     accommodations = Accommodation.objects.filter(category_id=id)
@@ -77,11 +98,15 @@ def category_accommodations(request, id, slug):
                'accommodations': accommodations,
                'category': category,
                'categoryData': categorydata,
+               'current_user': current_user,
                'page': 'konaklama'}
     return render(request, 'accommodation.html', context)
 
 
 def accommodation_detail(request, id, slug):
+    current_user = request.user
+    if current_user.is_active:
+        current_user = UserProfile.objects.get(user_id=current_user.id);
     setting = Settings.objects.get(pk=1)
     accommodation = Accommodation.objects.get(pk=id)
     rooms = Room.objects.filter(hotel_id=id)
@@ -89,6 +114,7 @@ def accommodation_detail(request, id, slug):
     comments = Comment.objects.filter(hotel_id=id, status='True')
     category = Category.objects.all()
     context = {'setting': setting,
+               'current_user': current_user,
                'accommodation': accommodation,
                'category': category,
                'rooms': rooms,
@@ -99,6 +125,9 @@ def accommodation_detail(request, id, slug):
 
 
 def accommodation_search(request):
+    current_user = request.user
+    if current_user.is_active:
+        current_user = UserProfile.objects.get(user_id=current_user.id);
     if request.method == 'POST':  # form post edildiyse
         form = SearchForm(request.POST)
         if form.is_valid():
@@ -115,6 +144,7 @@ def accommodation_search(request):
                 'setting': setting,
                 'accommodations': accommodations,
                 'category': category,
+                'current_user': current_user,
                 'page': 'konaklama'
             }
             return render(request, 'accommodation_search.html', context)
@@ -174,6 +204,10 @@ def register_view(request):
             password = request.POST['password1']
             user = authenticate(request, username=username, password=password)
             login(request, user)
+            current_user = request.user
+            data = UserProfile()
+            data.user_id = current_user.id
+            data.save()
             return HttpResponseRedirect('/')
 
     form = RegisterForm()

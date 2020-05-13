@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a209081-c632-4557-ad02-a2c8f41d68b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/users/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/userprofile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/accommodation.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/accommodation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/accommodation_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/accommodation_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/accommodation_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/accommodation_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/hakkimizda.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/hakkimizda.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/referanslar.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/referanslar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelReservation/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotelReservation/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotelReservation/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotelReservation/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -48,15 +45,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/user/templates" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\uploads\images\users" />
+      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\uploads\images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\user\templates" />
+      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\user" />
       <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\home\templates" />
       <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\home" />
       <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\uploads" />
-      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\uploads\images" />
-      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\home\static" />
     </key>
   </component>
   <component name="RunManager">
@@ -121,7 +122,10 @@
       <workItem from="1588703421256" duration="14141000" />
       <workItem from="1589057336904" duration="8722000" />
       <workItem from="1589118111353" duration="9732000" />
-      <workItem from="1589147045388" duration="2884000" />
+      <workItem from="1589147045388" duration="3460000" />
+      <workItem from="1589202413766" duration="3668000" />
+      <workItem from="1589206095314" duration="8549000" />
+      <workItem from="1589382295106" duration="2647000" />
     </task>
     <task id="LOCAL-00001" summary="14. Videoya kadar ilerlendi">
       <created>1586046590982</created>
@@ -160,6 +164,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585429406654" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589206004427">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589206004427" />
     <state x="149" y="120" width="1271" height="811" key="CommitChangelistDialog2" timestamp="1586046693341">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -204,10 +212,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="590" y="373" key="Performance.Activity.Monitor/0.0.1920.1040@0.0.1920.1040" timestamp="1585409204503" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1589147075305">
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1589382516119">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589147075305" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589382516119" />
+    <state x="609" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589207758433">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="609" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589207758433" />
     <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586046700119">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -10,6 +10,11 @@ Kullanıcı_Adı: admin
 Şifre: 12345
 ```
 ---
+#### 11.05.2020
+"Django Projesi 2020 -Türkçe" Videolarından 24. videoya kadar yapıldı.
+- Log in-Log out işlemleri
+- Register işlemleri
+
 #### 10.05.2020
 "Django Projesi 2020 -Türkçe" Videolarından 22. videoya kadar yapıldı.
 - Yorum ve puanlama yapma

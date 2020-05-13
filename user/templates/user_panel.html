@@ -1,0 +1,23 @@
+<aside class="aa-blog-sidebar">
+    <!-- Profile Status -->
+    <div class="aa-blog-sidebar-single">
+        <div class="aa-banner-ads">
+            <a href="#">
+                <img src="{{ current_user.image.url }}" alt="profile_picture">
+            </a>
+            <h2>{{ current_user.user.username }}</h2>
+        </div>
+    </div>
+
+    <!-- Start single sidebar -->
+    <div class="aa-blog-sidebar-single">
+        <h2>Kullanıcı Paneli</h2>
+        <ul class="cke_menu_panel">
+            <li><a href="/user/"><i class="fa fa-user"></i> Kullanıcı Bilgileri</a></li>
+            <li><a href=""><i class="fa fa-credit-card"></i> Rezarvasyonlarım</a></li>
+            <li><a href=""><i class="fa fa-comments"></i> Yorumlarım</a></li>
+            <li><a href=""><i class="fa fa-thumbs-up"></i> Favorilerim</a></li>
+            <li><a href="/logout/"><i class="fa fa-sign-out"></i> Çıkış</a></li>
+        </ul>
+    </div>
+</aside>
