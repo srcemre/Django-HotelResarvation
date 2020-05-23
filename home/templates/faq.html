@@ -1,0 +1,62 @@
+{% extends 'homebase.html' %}
+
+{% block title %} SSS {% endblock %}
+{% block keywords %} {{ category.keywords }} {% endblock %}
+{% block description %} {{ category.description }} {% endblock %}
+
+{% block head %}
+    <link rel="shortcut icon" href="{{ setting.icon.url }}" type="image/x-icon">
+    <script>
+        $(function () {
+            $("#accordion").accordion();
+        });
+    </script>
+{% endblock %}
+
+
+{% block menu %}
+    {% include "menu.html" %}
+{% endblock %}
+{% block slider %}
+    <section id="aa-property-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-property-header-inner">
+                        <h2>Sıkça Sorulan Sorular</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="/">Ana Sayfa</a></li>
+                            <li class="active">SSS</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block content %}
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="padding: 20px; height: 800px">
+
+                        <div id="accordion">
+                            {% for rs in faq %}
+                                <h2><b>{{ rs.question }}</b></h2>
+                                <div>
+                                    <p>{{ rs.answer }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %} {% include 'footer.html' %} {% endblock %}

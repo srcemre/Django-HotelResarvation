@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
+    'reservation.apps.ReservationConfig',
     'user.apps.UserConfig',
     'accommodation.apps.AccommodationConfig',
     'django.contrib.admin',

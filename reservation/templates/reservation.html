@@ -1,0 +1,205 @@
+{% extends "homebase.html" %}
+
+{% block title %} UserProfile - {{ setting.company }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel="shortcut icon" href="{{ setting.icon.url }}" type="image/x-icon">
+{% endblock %}
+
+{% block menu %}
+    {% include "menu.html" %}
+{% endblock %}
+{% block slider %}
+
+    <section id="aa-property-header" style="background-image: url('{{ current_user.image.url }}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-property-header-inner">
+                        <h2>ÖDEME</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="/">Ana Sayfa</a></li>
+                            <li class="active">user</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+{% block content %}
+
+    <!-- Start Blog  -->
+    <section id="aa-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-blog-area">
+                        <form action="/reservation/confirm/" method="post">
+                        {% csrf_token %}
+                        <input name="checkin" type="text" value="{{ checkin.date }}" hidden="hidden"/>
+                        <input name="checkout" type="text" value="{{ checkout.date }}" hidden="hidden"/>
+                        <input name="person" type="number" value="{{ person }}" hidden="hidden"/>
+                        <input name="roomid" type="number" value="{{ room.id }}" hidden="hidden"/>
+                        <input name="price" value="{{ room.price }}" hidden="hidden"/>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            <div class="alert alert-{{ message.tags }}" role="alert">
+                                                {{ message }}
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                    <h2>KULLANICI BİLGİLERİ</h2>
+                                    <div style="margin-top: 10px; ">
+                                        <table class="table" cellpadding="3" width="100%">
+                                            <tr class="text-left">
+                                                <th>Ad</th>
+                                                <td><input name="first_name" type="text"
+                                                           value="{{ current_user.user.first_name }}"></td>
+                                            </tr>
+                                            <tr class="text-left">
+                                                <th>Soyad</th>
+                                                <td><input name="last_name" type="text"
+                                                           value="{{ current_user.user.last_name }}"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Phone</th>
+                                                <td><input name="phone" type="text" value="{{ current_user.phone }}">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Address</th>
+                                                <td><input name="address" type="text"
+                                                           value="{{ current_user.address }}"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>City
+                                                <td><input name="city" type="text" value="{{ current_user.city }}"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Country</th>
+                                                <td><input name="country" type="text"
+                                                           value="{{ current_user.country }}"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h2>KART BİLGİLERİ</h2>
+                                    <div style="margin-top: 10px; ">
+                                        <table class="table" cellpadding="3" width="100%">
+                                            <tr class="text-left">
+                                                <th>Total</th>
+                                                <td><input name="total" type="number" value="{{ price.days }}"
+                                                           aria-hidden="false">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Credit Card Holder</th>
+                                                <td><input type="text" value=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Credit Card Number</th>
+                                                <td><input type="text" value=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Credit Card Date/Year</th>
+                                                <td><input type="text" value=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Security Number</th>
+                                                <td><input type="text" value=""></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2>RANDEVU BİLGİLERİ</h2>
+                                    <div style="margin-top: 10px; border-style: dotted; background-color: lightgray; padding: 15px">
+
+                                        <div style="margin-bottom: 10px;">
+                                            <table class="table" cellpadding="3" width="100%">
+                                                <tr>
+                                                    <th width="20%">Otel İsmi:</th>
+                                                    <td>{{ room.hotel.title }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="20%">Otel Adresi</th>
+                                                    <td>{{ room.hotel.address }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="20%">Giriş Tarihi:</th>
+                                                    <td>{{ checkin.date }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="20%">Çıkış Tarihi:</th>
+                                                    <td>{{ checkout.date }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="20%">Gece Sayısı:</th>
+                                                    <td>{{ test.days }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="20%">Kişi Sayisi</th>
+                                                    <td>{{ person }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="20%">Toplam Ödenecek Tutar:</th>
+                                                    <td><i class="fa fa-dollar"></i>{{ price.days }}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <table class="table" cellpadding="3" width="100%">
+                                            <tr>
+                                                <th width="30%"> Oda Tipi</th>
+                                                <th width="5%"> Kişi</th>
+                                                <th width="45%"> Detaylar</th>
+                                                <th width="10%"> Gecelik Fiyat</th>
+                                                <th width="10%"> Müsait oda</th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <img alt="img" src="{{ room.thumbnail.url }}" width="100%">
+                                                </td>
+                                                <td>
+                                                    <script language="JavaScript1.2">
+                                                        var sayi = {{ room.person }};
+                                                        for (i = 0; i < sayi; i++)
+                                                            document.write("<i class=\"fa fa-user\"></i>")
+                                                    </script>
+                                                </td>
+                                                <td>
+                                                    <h4>{{ room.title }}</h4>
+                                                    {{ room.detail |safe }}
+                                                </td>
+                                                <td><i class="fa fa-dollar"></i>{{ room.price }}</td>
+                                                <td><i class="fa fa-hotel"></i> {{ room.amount }}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12" style="margin-top: 10px">
+                                    <input type="submit" value="REZERVASYON ONAYLA" class="aa-view-btn"
+                                           name="submit" style="float: right; width: 100%; height: 100px;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}

@@ -6,6 +6,24 @@
 
 {% block head %}
     <link rel="shortcut icon" href="{{ setting.icon.url }}" type="image/x-icon">
+
+    <script>
+        $(function () {
+            $("#query").autocomplete({
+                source: "/search_auto/",
+                select: function (event, ui) { //item selected
+                    AutoCompleteSelectHandler(event, ui)
+                },
+                minLength: 2,
+            });
+        });
+
+        function AutoCompleteSelectHandler(event, ui) {
+            var selectedObj = ui.item;
+        }
+
+    </script>
+
 {% endblock %}
 
 {% block menu %}
@@ -53,284 +71,292 @@
                                     <img src="{{ rs.image.url }}" alt="img">
                                 {% endfor %}
                             </div>
-                            <div class="aa-properties-info">
-                                <h2> {{ accommodation.title }} </h2>
-                                <span class="aa-price"><i class="fa fa-dollar"></i>65000</span>
-                                <div class="aa-title">
-                                    <h2>DETAYLAR</h2>
-                                    <span></span>
-                                </div>
-                                <p>{{ accommodation.detail | safe }}</p>
-
-                                <!-- ROOMSs -->
-                                <div class="aa-nearby-properties">
-                                    <div class="aa-title">
-                                        <h2>{{ accommodation.category }} - {{ accommodation.title }} - Rooms </h2>
-                                        <span></span>
-                                    </div>
-                                    <div class="aa-nearby-properties-area">
-                                        <div class="row">
-                                            {% for rs in rooms %}
-                                                <div class="col-md-6">
-                                                    <article class="aa-properties-item">
-                                                        <a class="aa-properties-item-img" href="#">
-                                                            <img alt="img" src="{{ rs.thumbnail.url }}">
-                                                        </a>
-                                                        <div class="aa-tag for-sale">
-                                                            %20
-                                                        </div>
-                                                        <div class="aa-properties-item-content">
-                                                            <div class="aa-properties-info">
-                                                                <span>{{ rs.person }} <i class="fa fa-user"></i></span>
-                                                                <span>{{ rs.bed }} <i class="fa fa-bed"></i></span>
-                                                                <span>{{ rs.amount }} Amount</span>
-                                                            </div>
-                                                            <div class="aa-properties-about">
-                                                                <h3><a href="#">{{ rs.title }}</a></h3>
-                                                                <p>{{ rs.description }}</p>
-                                                            </div>
-                                                            <div class="aa-properties-detial">
-                                                            <span class="aa-price">
-                                                                <i class="fa fa-dollar"></i>{{ rs.price }}
-                                                            </span>
-                                                                <a class="aa-secondary-btn" href="#">Detaylar</a>
-                                                            </div>
-                                                        </div>
-                                                    </article>
-                                                </div>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--<h4>Property Video</h4>
-                                <h4>Property Video</h4>
-                                <iframe width="100%" height="480" src="https://www.youtube.com/embed/CegXQps0In4" frameborder="0" allowfullscreen></iframe>
-                                <h4>Property Map</h4>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6851.201919469417!2d-86.11773906635584!3d33.47324776828677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x888bdb60cc49c571%3A0x40451ca6baf275c7!2s36008+AL-77%2C+Talladega%2C+AL+35160%2C+USA!5e0!3m2!1sbn!2sbd!4v1460452919256" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                                -->
-                            </div>
-                            <div class="aa-properties-social">
-                                <ul>
-                                    <li>Share</li>
-                                    <li><a href="/"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="/"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="/"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="/"><i class="fa fa-pinterest"></i></a></li>
-                                </ul>
-                            </div>
-
-                            <div class="aa-comments-area">
-                                <h3>{{ comments.id }} Comments</h3>
-                                <div class="comments">
-                                    <ul class="commentlist">
-                                        {% load static %}
-                                        {% for rs in comments %}
-                                        <li>
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <img alt="img" src="{% static 'img/testimonial-1.png' %}" class="media-object news-img">
-                                                </div>
-                                                <div class="media-body">
-                                                    <h4 class="author-name">{{ rs.user.username }}</h4>
-                                                    <span class="comments-date">{{ rs.create_at }}</span>
-                                                    <span class="author-tag">
-                                                        <i class="fa fa-star{% if rs.rate < 1 %}-o{% endif %}"></i>
-                                                        <i class="fa fa-star{% if rs.rate < 2 %}-o{% endif %}"></i>
-                                                        <i class="fa fa-star{% if rs.rate < 3 %}-o{% endif %}"></i>
-                                                        <i class="fa fa-star{% if rs.rate < 4 %}-o{% endif %}"></i>
-                                                        <i class="fa fa-star{% if rs.rate < 5 %}-o{% endif %}"></i>
-                                                    </span>
-                                                    <p>{{ rs.comment }}</p>
-                                                    <a class="reply-btn" href="#">Reply</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        {% endfor %}
-                                    </ul>
-                                    <!-- comments pagination -->
-                                    <!-- TODO: BURAYI DÜZENLE -->
-                                    <nav>
-                                        <ul class="pagination comments-pagination">
-                                            <li>
-                                                <a aria-label="Previous" href="#">
-                                                    <span aria-hidden="true">«</span>
-                                                </a>
-                                            </li>
-                                            <li><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li>
-                                                <a aria-label="Next" href="#">
-                                                    <span aria-hidden="true">»</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-
-                            <!-- Properties social share -->
-                            <div id="respond">
-                                <h3 class="reply-title">Yorum Yap</h3>
-                                <form id="commentform" action="/accommodation/addcomment/{{ accommodation.id }}" method="POST">
-                                    {% csrf_token %}
-                                    <p class="comment-notes" >
-                                        <span class="required">*</span> ile işaretlenmiş alanları doldurmak zorunludur.
-                                    </p>
-                                    <p class="comment-form-author">
-                                        <label for="subject">Konu: <span class="required">*</span></label>
-                                        <input type="text" name="subject" id="id_subject" required="required" size="30" value="" >
-                                    </p>
-                                    <p class="comment-form-author">
-                                        <label for="rate">Puan: <span class="required">*</span></label>
-                                <div class="container">
-                                        <div class="stars" >
-                                            <!-- TODO: STARS BURAYI DÜZENLE -->
-                                            <input type="radio" name="rate" id="star1" size="30" value="1" /><label for="star1"><i class="fa fa-star">1 </i></label>
-                                            <input type="radio" name="rate" id="star2" size="30" value="2" /><label for="star1"><i class="fa fa-star">2 </i></label>
-                                            <input type="radio" name="rate" id="star3" size="30" value="3" /><label for="star1"><i class="fa fa-star">3 </i></label>
-                                            <input type="radio" name="rate" id="star4" size="30" value="4" /><label for="star1"><i class="fa fa-star">4 </i></label>
-                                            <input type="radio" name="rate" id="star5" size="30" value="5" /><label for="star1"><i class="fa fa-star">5</i></label>
-                                        </div>
-                                    </div>
-                                    </p>
-                                    <p class="comment-form-comment" >
-                                        <label for="comment" >Yorum: <span class="required">*</span></label>
-                                        <textarea required="required" id="id_comment" required="required" aria-required="true" rows="8" cols="45"  name="comment"></textarea>
-                                    </p>
-                                    <p class="comment-notes" >
-                                        {% if messages %}
-                                            {% for message in messages %}
-                                                <div class="alert alert-{{ message.tags }}" role="alert">{{ message }}</div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </p>
-                                    <p class="form-submit">
-                                        {% if user.id is not None %}
-                                            <input type="submit" value="Post Comment" class="aa-browse-btn" name="submit">
-                                        {% else %}
-                                            Yorumunuzu eklemek için giriş yapınız !
-                                        {% endif %}
-                                    </p>
-                                </form>
-                            </div>
-
 
                         </div>
                     </div>
                 </div>
-
-                <!-- Start properties sidebar -->
                 <div class="col-md-4">
                     <aside class="aa-properties-sidebar">
-                        <!-- Start Single properties sidebar -->
                         <div class="aa-properties-single-sidebar">
-                            <h3>Properties Search</h3>
-                            <form action="">
+                            <h3>BAZI OTELLER</h3>
+                            <form action="/search/" method="post">
+                                {% csrf_token %}
                                 <div class="aa-single-advance-search">
-                                    <input type="text" placeholder="Type Your Location">
+                                    <input id="query" name="query" type="text" placeholder="ANAHTAR KELİME GİRİNİZ">
                                 </div>
+                                {% load mptt_tags %}
                                 <div class="aa-single-advance-search">
-                                    <select id="" name="">
-                                        <option selected="" value="0">Category</option>
-                                        <option value="1">Flat</option>
-                                        <option value="2">Land</option>
-                                        <option value="3">Plot</option>
-                                        <option value="4">Commercial</option>
+                                    <select name="catid">
+                                        <option value="0" selected>KATEGORİ</option>
+                                        {% recursetree category %}
+                                            <option value="{{ node.id }}">{{ node.title }}</option>
+                                            {% if not node.is_leaf_node %}
+                                                {{ children }}
+                                            {% endif %}
+                                        {% endrecursetree %}
                                     </select>
-                                </div>
-                                <div class="aa-single-advance-search">
-                                    <select id="" name="">
-                                        <option selected="" value="0">Type</option>
-                                        <option value="1">Flat</option>
-                                        <option value="2">Land</option>
-                                        <option value="3">Plot</option>
-                                        <option value="4">Commercial</option>
-                                    </select>
-                                </div>
-                                <div class="aa-single-advance-search">
-                                    <select id="" name="">
-                                        <option selected="" value="0">Type</option>
-                                        <option value="1">Flat</option>
-                                        <option value="2">Land</option>
-                                        <option value="3">Plot</option>
-                                        <option value="4">Commercial</option>
-                                    </select>
-                                </div>
-                                <div class="aa-single-filter-search">
-                                    <span>AREA (SQ)</span>
-                                    <span>FROM</span>
-                                    <span id="skip-value-lower" class="example-val">30.00</span>
-                                    <span>TO</span>
-                                    <span id="skip-value-upper" class="example-val">100.00</span>
-                                    <div id="aa-sqrfeet-range"
-                                         class="noUi-target noUi-ltr noUi-horizontal noUi-background">
-                                    </div>
-                                </div>
-                                <div class="aa-single-filter-search">
-                                    <span>PRICE ($)</span>
-                                    <span>FROM</span>
-                                    <span id="skip-value-lower2" class="example-val">30.00</span>
-                                    <span>TO</span>
-                                    <span id="skip-value-upper2" class="example-val">100.00</span>
-                                    <div id="aa-price-range"
-                                         class="noUi-target noUi-ltr noUi-horizontal noUi-background">
-                                    </div>
                                 </div>
                                 <div class="aa-single-advance-search">
                                     <input type="submit" value="Search" class="aa-search-btn">
                                 </div>
                             </form>
                         </div>
-                        <!-- Start Single properties sidebar -->
-                        <div class="aa-properties-single-sidebar">
-                            <h3>Populer Properties</h3>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#">
-                                        <img class="media-object" src="img/item/1.jpg" alt="img">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading"><a href="#">This is Title</a></h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    <span>$65000</span>
-                                </div>
+                    </aside>
+                </div>
+                <div class="col-md-12">
+                    <div class="aa-properties-details">
+                        <div class="aa-properties-info">
+                            <h2> {{ accommodation.title }} </h2>
+                            <span class="aa-price"><i class="fa fa-dollar"></i>""ODANIN MAX-MIN FİYATI""</span>
+                            <div class="aa-title">
+                                <h2>DETAYLAR</h2>
+                                <span></span>
                             </div>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#">
-                                        <img class="media-object" src="img/item/1.jpg" alt="img">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading"><a href="#">This is Title</a></h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    <span>$65000</span>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#">
-                                        <img class="media-object" src="img/item/1.jpg" alt="img">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading"><a href="#">This is Title</a></h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    <span>$65000</span>
+                            <p>{{ accommodation.detail | safe }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ROOM SECTION -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- ROOMSs -->
+                    <div class="aa-nearby-properties">
+                        <div class="aa-title">
+                            <h2> ODALAR </h2>
+                            <span></span>
+                        </div>
+                        <div class="aa-nearby-properties-area">
+                            <div class="row">
+                                <div class="aa-signin-area">
+                                    <div class="aa-title" style="background-color: lightgray; text-align: center">
+                                        <div class="aa-single-form" style="padding: 10px">
+
+                                            {% if messages %}
+                                                {% for message in messages %}
+                                                    <div class="alert alert-{{ message.tags }}" role="alert">
+                                                        {{ message }}
+                                                    </div>
+                                                {% endfor %}
+                                            {% endif %}
+
+                                            <label for="entrydate">Giriş*</label>
+                                            <i class="fa fa-calendar-check-o"></i>
+                                            <input id="today" type="date" required="required" aria-required="true"
+                                                   name="checkindate">
+                                            <label for="entrydate">Çıkış*</label>
+                                            <i class="fa fa-calendar-times-o"></i>
+                                            <input id="myDate" type="date" required="required" aria-required="true"
+                                                   name="checkoutdate">
+                                        </div>
+                                    </div>
+                                    <table class="table" cellpadding="3" width="100%">
+                                        <tr>
+                                            <th width="24%"> Oda Tipi</th>
+                                            <th width="5%"> Kişi Sayısı</th>
+                                            <th width="48%"> Detaylar</th>
+                                            <th width="10%"> 1 Gecelik Fiyat</th>
+                                            <th width="5%"> Oda Sayısı</th>
+                                            <th width="5%"> Gece Sayısı</th>
+                                            <th></th>
+                                        </tr>
+                                        {% for rs in rooms %}
+                                            <form action="/reservation/addtocart/{{ rs.id }}" method="post">
+                                            {% csrf_token %}
+                                            <tr>
+                                                <td>
+                                                    <img alt="img" src="{{ rs.thumbnail.url }}"
+                                                         width="100%">
+                                                </td>
+                                                <td>
+                                                    {{ rs.person }}<br>
+                                                    <script language="JavaScript1.2">
+                                                        var sayi =
+                                                        {{ rs.person }}
+                                                        for (i = 0; i < sayi; i++)
+                                                            document.write("<i class=\"fa fa-user\"></i>")
+                                                    </script>
+                                                </td>
+                                                <td>
+                                                    <h4>{{ rs.title }}</h4>
+                                                    {{ rs.detail |safe }}
+                                                </td>
+                                                <td><i class="fa fa-dollar"></i>{{ rs.price }}</td>
+                                                <td>
+                                                    <input name="quantity" type="number" min="0" value="1"
+                                                           style="width: 100%">
+                                                </td>
+                                                <td>
+                                                    <input name="day" type="number" min="0" value="1"
+                                                           style="width: 100%">
+                                                </td>
+                                                <td>
+                                                    <input type="submit" value="REZERVASYON" class="aa-secondary-btn"
+                                                           name="submit" style="width: 100%">
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </table>
+                                    <input type="submit" value="REZERVASYON YAP" class="aa-secondary-btn"
+                                           style="width: 100%; height: 50px"
+                                           name="submit">
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                    </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SOCIAL SECTION -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-properties-social">
+                        <ul>
+                            <li>Share</li>
+                            <li><a href="/"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="/"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="/"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="/"><i class="fa fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- COMMENT VIEW SECTION -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-comments-area">
+                        <h3>{{ comments.id }} Comments</h3>
+                        <div class="comments">
+                            <ul class="commentlist">
+                                {% load static %}
+                                {% for rs in comments %}
+                                    <li>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img alt="img" src="{{ rs.user.userprofile.image.url }}"
+                                                     class="media-object news-img">
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="author-name">{{ rs.user.username }}</h4>
+                                                <span class="comments-date">{{ rs.create_at }}</span>
+                                                <span class="author-tag">
+                                                        <i class="fa fa-star{% if rs.rate < 1 %}-o{% endif %}"></i>
+                                                        <i class="fa fa-star{% if rs.rate < 2 %}-o{% endif %}"></i>
+                                                        <i class="fa fa-star{% if rs.rate < 3 %}-o{% endif %}"></i>
+                                                        <i class="fa fa-star{% if rs.rate < 4 %}-o{% endif %}"></i>
+                                                        <i class="fa fa-star{% if rs.rate < 5 %}-o{% endif %}"></i>
+                                                    </span>
+                                                <p>{{ rs.comment }}</p>
+                                                <a class="reply-btn" href="#">Reply</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <!-- comments pagination -->
+                            <!-- TODO: BURAYI DÜZENLE -->
+                            <nav>
+                                <ul class="pagination comments-pagination">
+                                    <li>
+                                        <a aria-label="Previous" href="#">
+                                            <span aria-hidden="true">«</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                        <a aria-label="Next" href="#">
+                                            <span aria-hidden="true">»</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- COMMENT SECTION -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="respond">
+                        <h3 class="reply-title">Yorum Yap</h3>
+                        <form id="commentform" action="/accommodation/addcomment/{{ accommodation.id }}"
+                              method="POST">
+                            {% csrf_token %}
+                            <p class="comment-notes">
+                                <span class="required">*</span> ile işaretlenmiş alanları doldurmak zorunludur.
+                            </p>
+                            <p class="comment-form-author">
+                                <label for="subject">Konu: <span class="required">*</span></label>
+                                <input type="text" name="subject" id="id_subject" required="required" size="30"
+                                       value="">
+                            </p>
+                            <p class="comment-form-author">
+                                <label for="rate">Puan: <span class="required">*</span></label>
+                            <div class="container">
+                                <div class="stars">
+                                    <!-- TODO: STARS BURAYI DÜZENLE -->
+                                    <input type="radio" name="rate" id="star1" size="30" value="1"/><label
+                                        for="star1"> <i class="fa fa-star"></i>1</label>
+                                    <input type="radio" name="rate" id="star2" size="30" value="2"/><label
+                                        for="star1"> <i class="fa fa-star"></i>2</label>
+                                    <input type="radio" name="rate" id="star3" size="30" value="3"/><label
+                                        for="star1"> <i class="fa fa-star"></i>3</label>
+                                    <input type="radio" name="rate" id="star4" size="30" value="4"/><label
+                                        for="star1"> <i class="fa fa-star"></i>4</label>
+                                    <input type="radio" name="rate" id="star5" size="30" value="5"/><label
+                                        for="star1"> <i class="fa fa-star"></i>5</label>
+                                </div>
+                            </div>
+                            </p>
+                            <p class="comment-form-comment">
+                                <label for="comment">Yorum: <span class="required">*</span></label>
+                                <textarea required="required" id="id_comment" required="required"
+                                          aria-required="true" rows="8" cols="45" name="comment"></textarea>
+                            </p>
+                            <p class="comment-notes">
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <div class="alert alert-{{ message.tags }}"
+                                             role="alert">{{ message }}</div>
+                                    {% endfor %}
+                                {% endif %}
+                            </p>
+                            <p class="form-submit">
+                                {% if user.id is not None %}
+                                    <input type="submit" value="Post Comment" class="aa-browse-btn"
+                                           name="submit">
+                                {% else %}
+                                    Yorumunuzu eklemek için giriş yapınız !
+                                {% endif %}
+                            </p>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- / Properties  -->
+
 
 {% endblock %}
 {% block footer %} {% include 'footer.html' %} {% endblock %}

@@ -12,7 +12,7 @@ def index(request):
     context = {'text': text}
     return render(request, 'index.html', context)
 
-@login_required(login_url='/login') #
+@login_required(login_url='/login')
 def addcomment(request,id):
     url = request.META.get('HTTP_REFERER')  # Son url adresi aliyor.
     if request.method == 'POST':

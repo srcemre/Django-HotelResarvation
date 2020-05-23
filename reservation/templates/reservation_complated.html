@@ -1,0 +1,49 @@
+{% extends "homebase.html" %}
+
+{% block title %} UserProfile - {{ setting.company }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel="shortcut icon" href="{{ setting.icon.url }}" type="image/x-icon">
+{% endblock %}
+
+{% block menu %}
+    {% include "menu.html" %}
+{% endblock %}
+{% block slider %}
+
+    <section id="aa-property-header" style="background-image: url('{{ current_user.image.url }}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-property-header-inner">
+                        <h2>Rezervasyon Onaylama</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="/">Ana Sayfa</a></li>
+                            <li class="active">user</li>
+                        </ol>
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }}" role="alert">
+                                    {{ message }} <h1>Rezervasyon Kodunuz: {{ ordercode }}</h1>
+                                </div>
+                            {% endfor %}
+
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+{% block content %}
+
+
+
+{% endblock %}
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}

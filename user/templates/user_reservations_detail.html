@@ -1,0 +1,125 @@
+{% extends "homebase.html" %}
+
+{% block title %} UserProfile - {{ setting.company }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel="shortcut icon" href="{{ setting.icon.url }}" type="image/x-icon">
+{% endblock %}
+
+{% block menu %}
+    {% include "menu.html" %}
+{% endblock %}
+{% block slider %}
+
+    <section id="aa-property-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-property-header-inner">
+                        <h2>Hesap Bilgileri</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="/">Ana Sayfa</a></li>
+                            <li class="active">user</li>
+                            <li class="active">reservationdetail</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+{% block content %}
+
+    <!-- Start Blog  -->
+    <section id="aa-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-blog-area">
+                        <div class="row">
+                            <!-- Start blog sidebar -->
+                            <div class="col-md-3">
+
+                                {% include 'user_panel.html' %}
+
+                            </div>
+                            <div class="col-md-9">
+                                <div style="margin-top: 10px; ">
+                                    <h2>REZERVASYON DETAYI</h2>
+                                    <table class="table" cellpadding="3" width="100%">
+                                        {% for rs in reservationdetail %}
+                                            <tr>
+                                                <td>
+                                                    <a href="/accommodation/{{ rs.room.hotel.id }}/{{ rs.room.hotel.slug }}/">
+                                                        <img src="{{ rs.room.hotel.thumbnail.url }}"
+                                                             style="width: 100%">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th width="30%">Id</th>
+                                                <td>{{ rs.id }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Otel</th>
+                                                <td>
+                                                    <a style="color: #000eff"
+                                                       href="/accommodation/{{ rs.room.hotel.id }}/{{ rs.room.hotel.slug }}/">
+                                                        {{ rs.room.hotel.title }}
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Oda</th>
+                                                <td>
+                                                    <a style="color: #000eff"
+                                                       href="/accommodation/{{ rs.room.hotel.id }}/{{ rs.room.hotel.slug }}/">
+                                                        {{ rs.room.title }}
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Price</th>
+                                                <td>{{ rs.price }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Person</th>
+                                                <td>{{ rs.person }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Checkin</th>
+                                                <td>{{ rs.checkin }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Checkout</th>
+                                                <td>{{ rs.checkout }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Status</th>
+                                                <td>{{ rs.status }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Date</th>
+                                                <td>{{ rs.create_at.date }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th><a class="aa-secondary-btn" href="/user/reservations/">GERİ</a></th>
+                                            </tr>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}

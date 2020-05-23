@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>İçerik Galerisi</title>
+</head>
+<body>
+<h2>{{ content.title }}</h2>
+<hr>
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" role="alert">
+            {{ message|safe }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="hidden" name="content_id" id="id_content_id" value="{{ content.id }}">
+        <label for="id_title">Başlık:</label>
+        <input type="text" name="title" class="input_number" placeholder="Başlık" maxlength="50" id="id_title">
+        <label for="id_image">Resim:</label>
+        <input type="file" name="image" class="input-sm" placeholder="Başlık" accept="image/ICgallery/*" id="id_image">
+        <button class="aa-primary-btn" type="submit">Upload</button>
+    </form>
+<hr>
+<h4>Yüklenen Resimler</h4>
+{% for rs in images %}
+    <img src = "{{ rs.image.url }}" height="200px">
+{% endfor %}
+</body>
+</html>
