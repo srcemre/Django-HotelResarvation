@@ -9,25 +9,26 @@ from django.shortcuts import render
 
 # Create your views here.
 from accommodation.models import Accommodation, Category, Room, Image, Comment
+from content.models import Content
 from home.forms import SearchForm, RegisterForm
-from home.models import Settings, ContactForm, ContactFormMessage, UserProfile
+from home.models import Settings, ContactForm, ContactFormMessage, UserProfile, Faq
 
 
 def index(request):
     setting = Settings.objects.get(pk=1)
     sliderdata = Accommodation.objects.all()[:4]
     category = Category.objects.all()
-    accommodations = Accommodation.objects.all()[6::-1]  # Son girilenleri listeliyor.
-    current_user = request.user
-    if current_user.is_active:
-        current_user = UserProfile.objects.get(user_id=current_user.id);
+    accommodations = Accommodation.objects.all().order_by('-id')[:6]
+    lastContent = Content.objects.all().order_by('-id')[:3]
+    comments = Comment.objects.filter(publish='True')
 
-    context = {'setting': setting,
+    context = {'page': 'home',
+               'setting': setting,
                'category': category,
-               'page': 'home',
                'accommodations': accommodations,
                'sliderdata': sliderdata,
-               'current_user': current_user
+               'lastContent': lastContent,
+               'comments': comments,
                }
     return render(request, 'index.html', context)
 
@@ -219,3 +220,16 @@ def register_view(request):
         'form': form,
     }
     return render(request, 'register.html', context)
+
+
+def faq(request):
+    setting = Settings.objects.get(pk=1)
+    category = Category.objects.all()
+    faq = Faq.objects.filter(status='True').order_by('ordernumber')
+    context = {
+        'page': 'faq',
+        'setting': setting,
+        'category': category,
+        'faq': faq
+    }
+    return render(request, 'faq.html', context)

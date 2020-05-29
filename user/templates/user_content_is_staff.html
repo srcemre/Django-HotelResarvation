@@ -1,0 +1,41 @@
+<h2>İÇERİKLERİM <a class="btn btn-success" href="/user/contentadd/">+Ekle</a></h2>
+                                <div style="margin-top: 10px; ">
+                                    <table class="table" cellpadding="3" width="100%">
+                                        <tr class="text-left">
+
+                                            <th>Thumbnail</th>
+                                            <th>Başlık</th>
+                                            <th>Türü</th>
+                                            <th>Galeri</th>
+                                            <th>Durum</th>
+                                            <th>Tarih</th>
+                                            <th>Düzenle</th>
+                                            <th>Sil</th>
+                                        </tr>
+                                        {% for rs in contents %}
+                                            <tr class="text-left">
+                                                <td><img src="{{ rs.thumbnail.url }}" style="width: 60px;"></td>
+                                                <td><a href="/content/{{ rs.id }}/{{ rs.slug }}" ><strong>{{ rs.title }}</strong></a></td>
+                                                <td>{{ rs.type }}</td>
+                                                <td><a class="btn aa-view-btn" href="javascript:" onclick="window.open('/user/contentaddimage/{{ rs.id }}','gallery','height=1000,width=1200,top=50,left=150')" style="padding: 5px"> <i class="fa fa-picture-o"></i> Galeri</a></td>
+                                                <td>{{ rs.status }}</td>
+                                                <td>{{ rs.create_at.date }}</td>
+                                                <td>
+                                                    <a class="btn btn-warning" href="/user/contentedit/{{ rs.id }}">Düzenle</a>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-danger"
+                                                       href="/user/contentdelete/{{ rs.id }}"
+                                                       onclick="return confirm('Silinecek ! Emin misin?')">Sil</a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                                <div class="alert alert-{{ message.tags }}" role="alert">
+                                                    {{ message }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </table>
+                                </div>

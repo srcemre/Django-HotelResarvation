@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="aa-property-header-inner">
-                        <h2>Hesap Bilgileri</h2>
+                        <h2>KULLANICI PANELİ</h2>
                         <ol class="breadcrumb">
                             <li><a href="/">Ana Sayfa</a></li>
                             <li class="active">user</li>
@@ -64,7 +64,7 @@
                                                 <td>{{ rs.id }}</td>
                                             </tr>
                                             <tr>
-                                                <th>Otel</th>
+                                                <th>Konaklama</th>
                                                 <td>
                                                     <a style="color: #000eff"
                                                        href="/accommodation/{{ rs.room.hotel.id }}/{{ rs.room.hotel.slug }}/">
@@ -82,31 +82,31 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Price</th>
+                                                <th>Gecelik Fiyatı</th>
                                                 <td>{{ rs.price }}</td>
                                             </tr>
                                             <tr>
-                                                <th>Person</th>
+                                                <th>Kişi Sayısı</th>
                                                 <td>{{ rs.person }}</td>
                                             </tr>
                                             <tr>
-                                                <th>Checkin</th>
+                                                <th>Giriş Tarihi</th>
                                                 <td>{{ rs.checkin }}</td>
                                             </tr>
                                             <tr>
-                                                <th>Checkout</th>
+                                                <th>Çıkış Tarihi</th>
                                                 <td>{{ rs.checkout }}</td>
                                             </tr>
                                             <tr>
-                                                <th>Status</th>
+                                                <th>Durum</th>
                                                 <td>{{ rs.status }}</td>
                                             </tr>
                                             <tr>
-                                                <th>Date</th>
+                                                <th>Tarih</th>
                                                 <td>{{ rs.create_at.date }}</td>
                                             </tr>
                                             <tr>
-                                                <th><a class="aa-secondary-btn" href="/user/reservations/">GERİ</a></th>
+                                                <th><a class="btn btn-warning" href="/user/reservations/">GERİ</a></th>
                                             </tr>
                                         {% endfor %}
                                     </table>

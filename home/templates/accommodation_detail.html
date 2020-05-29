@@ -6,7 +6,43 @@
 
 {% block head %}
     <link rel="shortcut icon" href="{{ setting.icon.url }}" type="image/x-icon">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    var dateFormat = "mm/dd/yy",
+      from = $( "#from" )
+        .datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 2
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#to" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 2
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+      });
 
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+
+      return date;
+    }
+  } );
+  </script>
     <script>
         $(function () {
             $("#query").autocomplete({
@@ -31,9 +67,6 @@
 {% endblock %}
 {% block slider %}
 
-    <!-- Start Proerty header  -->
-    <!--  accommodations.first.thumbnail.url   -->
-    <!--  categoryData.title   -->
     <section id="aa-property-header" style="background-image: url('{{ accommodation.thumbnail.url }}')">
         <div class="container">
             <div class="row">
@@ -52,7 +85,6 @@
             </div>
         </div>
     </section>
-    <!-- End Proerty header  -->
 
 {% endblock %}
 {% block content %}
@@ -78,11 +110,12 @@
                 <div class="col-md-4">
                     <aside class="aa-properties-sidebar">
                         <div class="aa-properties-single-sidebar">
-                            <h3>BAZI OTELLER</h3>
+                            <h3>BAŞKA OTELLERİ ARAYIN</h3>
                             <form action="/search/" method="post">
                                 {% csrf_token %}
                                 <div class="aa-single-advance-search">
-                                    <input id="query" name="query" type="text" placeholder="ANAHTAR KELİME GİRİNİZ">
+                                    <input id="query" name="query" type="text"
+                                           placeholder="Anahtar kelimeyi giriniz...">
                                 </div>
                                 {% load mptt_tags %}
                                 <div class="aa-single-advance-search">
@@ -97,7 +130,7 @@
                                     </select>
                                 </div>
                                 <div class="aa-single-advance-search">
-                                    <input type="submit" value="Search" class="aa-search-btn">
+                                    <input type="submit" value="ARA" class="aa-search-btn">
                                 </div>
                             </form>
                         </div>
@@ -106,8 +139,23 @@
                 <div class="col-md-12">
                     <div class="aa-properties-details">
                         <div class="aa-properties-info">
-                            <h2> {{ accommodation.title }} </h2>
-                            <span class="aa-price"><i class="fa fa-dollar"></i>""ODANIN MAX-MIN FİYATI""</span>
+                            <h2> {{ accommodation.title }} -
+                                {% if accommodation.star %}
+                                    <i class="fa fa-star{% if accommodation.star < 1 %}-o{% endif %}"></i>
+                                    <i class="fa fa-star{% if accommodation.star < 2 %}-o{% endif %}"></i>
+                                    <i class="fa fa-star{% if accommodation.star < 3 %}-o{% endif %}"></i>
+                                    <i class="fa fa-star{% if accommodation.star < 4 %}-o{% endif %}"></i>
+                                    <i class="fa fa-star{% if accommodation.star < 5 %}-o{% endif %}"></i>
+                                {% else %}
+                                    <i class="fa fa-hotel"></i>
+                                {% endif %}
+                            </h2>
+                            <p>
+                                <i class="fa fa-map-marker"></i>{{ accommodation.address }} - {{ accommodation.city }}
+                            </p>
+                            <span class="aa-price">
+                                <i class="fa fa-dollar"></i>{{ accommodation.get_room_min_price }} - {{ accommodation.get_room_max_price }}
+                            </span>
                             <div class="aa-title">
                                 <h2>DETAYLAR</h2>
                                 <span></span>
@@ -118,6 +166,7 @@
                 </div>
             </div>
         </div>
+
         <!-- ROOM SECTION -->
         <div class="container">
             <div class="row">
@@ -131,77 +180,82 @@
                         <div class="aa-nearby-properties-area">
                             <div class="row">
                                 <div class="aa-signin-area">
-                                    <div class="aa-title" style="background-color: lightgray; text-align: center">
-                                        <div class="aa-single-form" style="padding: 10px">
-
-                                            {% if messages %}
-                                                {% for message in messages %}
-                                                    <div class="alert alert-{{ message.tags }}" role="alert">
-                                                        {{ message }}
-                                                    </div>
-                                                {% endfor %}
-                                            {% endif %}
-
-                                            <label for="entrydate">Giriş*</label>
-                                            <i class="fa fa-calendar-check-o"></i>
-                                            <input id="today" type="date" required="required" aria-required="true"
-                                                   name="checkindate">
-                                            <label for="entrydate">Çıkış*</label>
-                                            <i class="fa fa-calendar-times-o"></i>
-                                            <input id="myDate" type="date" required="required" aria-required="true"
-                                                   name="checkoutdate">
+                                    <form action="/reservation/details/" method="post">
+                                        {% csrf_token %}
+                                        <div class="aa-title" style="background-color: lightgray; text-align: center">
+                                            <div class="aa-single-form" style="padding: 10px">
+                                                {% if messages %}
+                                                    {% for message in messages %}
+                                                        <div class="alert alert-{{ message.tags }}" role="alert">
+                                                            {{ message }}
+                                                        </div>
+                                                    {% endfor %}
+                                                {% endif %}
+                                                <h3>Rezervasyon Yapma</h3>
+                                                <label for="checkin">Giriş*</label>
+                                                <i class="fa fa-calendar-check-o"></i>
+                                                <input type="text" id="from" required="required" aria-required="true"
+                                                       name="checkin">
+                                                <label for="checkout">Çıkış*</label>
+                                                <i class="fa fa-calendar-times-o"></i>
+                                                <input type="text" id="to" required="required" aria-required="true"
+                                                       name="checkout">
+                                                <label for="person">Kişi Sayısı*</label>
+                                                <i class="fa fa-user"></i>
+                                                <input type="number" required="required" aria-required="true"
+                                                       name="person" min="1" value="" style="width: 50px">
+                                                <button type="submit" class="btn aa-secondary-btn" style="width: 35%">
+                                                    REZERVASYON YAP
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <table class="table" cellpadding="3" width="100%">
-                                        <tr>
-                                            <th width="24%"> Oda Tipi</th>
-                                            <th width="5%"> Kişi Sayısı</th>
-                                            <th width="48%"> Detaylar</th>
-                                            <th width="10%"> 1 Gecelik Fiyat</th>
-                                            <th width="5%"> Oda Sayısı</th>
-                                            <th width="5%"> Gece Sayısı</th>
-                                            <th></th>
-                                        </tr>
-                                        {% for rs in rooms %}
-                                            <form action="/reservation/addtocart/{{ rs.id }}" method="post">
-                                            {% csrf_token %}
-                                            <tr>
-                                                <td>
-                                                    <img alt="img" src="{{ rs.thumbnail.url }}"
-                                                         width="100%">
-                                                </td>
-                                                <td>
-                                                    {{ rs.person }}<br>
-                                                    <script language="JavaScript1.2">
-                                                        var sayi =
-                                                        {{ rs.person }}
-                                                        for (i = 0; i < sayi; i++)
-                                                            document.write("<i class=\"fa fa-user\"></i>")
-                                                    </script>
-                                                </td>
-                                                <td>
-                                                    <h4>{{ rs.title }}</h4>
-                                                    {{ rs.detail |safe }}
-                                                </td>
-                                                <td><i class="fa fa-dollar"></i>{{ rs.price }}</td>
-                                                <td>
-                                                    <input name="quantity" type="number" min="0" value="1"
-                                                           style="width: 100%">
-                                                </td>
-                                                <td>
-                                                    <input name="day" type="number" min="0" value="1"
-                                                           style="width: 100%">
-                                                </td>
-                                                <td>
-                                                    <input type="submit" value="REZERVASYON" class="aa-secondary-btn"
-                                                           name="submit" style="width: 100%">
-                                                </td>
+                                        <table class="table" cellpadding="3" width="100%">
+                                            <tr style="color: white; background-color: black">
+                                                <th width="25%">Oda Tipi</th>
+                                                <th width="5%">Kişi</th>
+                                                <th width="45%">Detaylar</th>
+                                                <th width="10%">Gecelik</th>
+                                                <th width="10%">Müsait Oda</th>
+                                                <th width="5%"></th>
                                             </tr>
-                                        {% endfor %}
-                                    </table>
-                                    <input type="submit" value="REZERVASYON YAP" class="aa-secondary-btn"
-                                           style="width: 100%; height: 50px"
-                                           name="submit">
+                                            {% for rs in rooms %}
+                                                <tr>
+                                                    <td>
+                                                        <img alt="img" src="{{ rs.thumbnail.url }}"
+                                                             width="100%">
+                                                    </td>
+                                                    <td>
+                                                        <script language="JavaScript1.2">
+                                                            var sayi =
+                                                            {{ rs.person }}
+                                                            for (i = 0; i < sayi; i++)
+                                                                document.write("<i class=\"fa fa-user\"></i>")
+                                                        </script>
+                                                    </td>
+                                                    <td>
+                                                        <h4>{{ rs.title }}</h4>
+                                                        {{ rs.detail |safe }}
+                                                    </td>
+                                                    <td><i class="fa fa-dollar"></i>{{ rs.price }}</td>
+                                                    <td>
+                                                        {% if rs.amount > 0 %}
+                                                            <i class="fa fa-bed"></i> {{ rs.amount }}
+                                                        {% else %}
+                                                            <i class="fa fa-bed"></i> 0
+                                                        {% endif %}
+                                                    </td>
+                                                    <td>
+                                                        {% if rs.amount > 0 %}
+                                                            <input type="radio" value="{{ rs.id }}" name="roomid"
+                                                                   required="required"> Seç
+                                                        {% else %}
+                                                            <i class="fa fa-lock"></i>
+                                                        {% endif %}
+
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        </table>
                                     </form>
                                 </div>
                             </div>

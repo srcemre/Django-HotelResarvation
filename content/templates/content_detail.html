@@ -1,0 +1,216 @@
+{% extends "homebase.html" %}
+
+{% block title %} Blog-{{ setting.company }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lightbox.css' %}">
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+{% endblock %}
+
+{% block menu %}
+    {% include "menu.html" %}
+{% endblock %}
+{% block slider %}
+
+    <section id="aa-property-header"
+             style="background-image: url('{{ content.thumbnail.url }}'); background-attachment: local">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-property-header-inner">
+                        <h2>Blog</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="/">Ana Sayfa</a></li>
+                            <li class="active">content</li>
+                            <li class="active">{{ content.id }}</li>
+                            <li class="active">{{ content.slug }}</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+{% block content %}
+
+    <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-double-up"></i></a>
+    <!-- END SCROLL TOP BUTTON -->
+
+    <!-- Start Blog  -->
+    <section id="aa-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-blog-area">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="aa-blog-content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <article class="aa-blog-single aa-blog-details">
+                                                <figure class="aa-blog-img">
+                                                    <a href="#"><img alt="img" src="{{ content.thumbnail.url }}"
+                                                                     style="width: 50%;"></a>
+                                                    <span class="aa-date-tag">{{ content.create_at.date }}</span>
+                                                </figure>
+                                                <div class="aa-blog-single-content">
+                                                    <h2>{{ content.title }}</h2>
+                                                    <div class="aa-blog-single-bottom">
+                                                        <a class="aa-blog-author" href="#"><i class="fa fa-user"></i>
+                                                            {{ content.user }}</a>
+                                                    </div>
+                                                    {{ content.detail | safe }}
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <!-- Post tags -->
+                                        <div class="aa-blog-post-tag">
+                                            <div class="aa-title">
+                                                <h2>Galeri</h2>
+                                                <span></span>
+                                            </div>
+                                            <ul style="width: 100%; text-align: center;">
+                                                {% for rs in images %}
+                                                    <li>
+                                                        <img src="{{ rs.image.url }}" style="height: 260px"
+                                                             onclick="openModal();currentSlide({{ rs.id }})"
+                                                             class="hover-shadow cursor">
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div id="myModal" class="modal">
+                                        <div class="modal-content">
+                                            {% for rs in images %}
+                                                <div class="mySlides">
+                                                    <div class="numbertext">{{ rs.title }}</div>
+                                                    <img src="{{ rs.image.url }}" style="width:100%">
+                                                </div>
+                                            {% endfor %}
+                                            <span class="close cursor" onclick="closeModal()"
+                                                  style="background-color: red;">&times;</span>
+                                            <a class="prev" onclick="plusSlides(-1)"
+                                               style="background-color: cornflowerblue">&#10094;</a>
+                                            <a class="next" onclick="plusSlides(1)"
+                                               style="background-color: cornflowerblue">&#10095;</a>
+                                            <div class="caption-container">
+                                                <p id="caption"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- SOCIAL SECTION -->
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="aa-properties-social">
+                                                    <ul>
+                                                        <li>Sosyal Medyalarımız</li>
+                                                        <li><a href="{{ setting.facebook }}"><i
+                                                                class="fa fa-facebook"></i></a></li>
+                                                        <li><a href="{{ setting.instagram }}"><i
+                                                                class="fa fa-twitter"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Related blog post -->
+                                    <div class="col-md-12">
+                                        <div class="aa-blog-related-post">
+                                            <div class="aa-title">
+                                                <h2>Son Gönderiler</h2>
+                                                <span></span>
+                                            </div>
+                                            <div class="aa-blog-related-post-area">
+                                                <div class="row">
+
+                                                    {% for rs in lastContent %}
+                                                        <div class="col-md-6 col-sm-6">
+                                                            <article class="aa-blog-single">
+                                                                <figure class="aa-blog-img">
+                                                                    <a href="/content/{{ rs.id }}/menu/"><img
+                                                                            src="{{ rs.thumbnail.url }}"
+                                                                            alt="img"></a>
+                                                                    <span class="aa-date-tag">{{ rs.create_at.date }}</span>
+                                                                </figure>
+                                                                <div class="aa-blog-single-content">
+                                                                    <h3>
+                                                                        <a href="/content/{{ rs.id }}/menu/">{{ rs.title }}</a>
+                                                                    </h3>
+                                                                    <p>{{ rs.description }}</p>
+                                                                    <div class="aa-blog-single-bottom">
+                                                                        <a href="/content/{{ rs.id }}/menu/"
+                                                                           class="aa-blog-author"><i
+                                                                                class="fa fa-user"></i> {{ rs.user }}
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </article>
+                                                        </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- / Blog  -->
+
+{% endblock %}
+
+{% block footer %} {% include 'footer.html' %} {% endblock %}

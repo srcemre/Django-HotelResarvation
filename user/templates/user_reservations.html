@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="aa-property-header-inner">
-                        <h2>REZERVASYONLARIM</h2>
+                        <h2>KULLANICI PANELİ</h2>
                         <ol class="breadcrumb">
                             <li><a href="/">Ana Sayfa</a></li>
                             <li class="active">user</li>
@@ -50,14 +50,14 @@
                                 <h2>REZERVASYONLARIM</h2>
                                 <div style="margin-top: 10px; ">
                                     <table class="table" cellpadding="3" width="100%">
-                                        <tr class="text-left">
+                                        <tr class="text-left" style="color: white; background-color: black">
                                             <th>Id</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Total</th>
-                                            <th>Status</th>
-                                            <th>Date</th>
-                                            <th>Detail</th>
+                                            <th>Ad</th>
+                                            <th>Soyad</th>
+                                            <th>Toplam</th>
+                                            <th>Durum</th>
+                                            <th>Tarih</th>
+                                            <th>Detaylar</th>
                                         </tr>
                                         {% for rs in reservations %}
                                             <tr class="text-left">
@@ -68,7 +68,7 @@
                                                 <td>{{ rs.status }}</td>
                                                 <td>{{ rs.create_at.date }}</td>
                                                 <td>
-                                                    <a class="aa-secondary-btn" href="/user/reservationdetail/{{ rs.id }}">Detay</a>
+                                                    <a class="aa-secondary-btn" href="/user/reservationdetail/{{ rs.id }}">Detaylar</a>
                                                 </td>
                                             </tr>
                                         {% endfor %}

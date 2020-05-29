@@ -13,11 +13,11 @@
 {% endblock %}
 {% block slider %}
 
-    <section id="aa-property-header" style="background-image: url('{{ current_user.image.url }}')">
+    <section id="aa-property-header" style="background-color: darkslategray">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="aa-property-header-inner">
+                    <div class="aa-property-header-inner" style="height: 900px">
                         <h2>Rezervasyon Onaylama</h2>
                         <ol class="breadcrumb">
                             <li><a href="/">Ana Sayfa</a></li>
@@ -27,11 +27,11 @@
                             {% for message in messages %}
                                 <div class="alert alert-{{ message.tags }}" role="alert">
                                     {{ message }} <h1>Rezervasyon Kodunuz: {{ ordercode }}</h1>
+                                    <p><i class="fa fa-info-circle"></i> HATIRLATMA: Rezarvasyon bilgilerinize <a href="/user/">Kullanıcı Paneli</a>'nden ulaşabilirsiniz.<br>Rezarvasyon bilgilerinizi görebilirsiniz.</p>
                                 </div>
                             {% endfor %}
 
                         {% endif %}
-
                     </div>
                 </div>
             </div>

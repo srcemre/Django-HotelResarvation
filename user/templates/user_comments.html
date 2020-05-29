@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="aa-property-header-inner">
-                        <h2>Hesap Bilgileri</h2>
+                        <h2>KULLANICI PANELİ</h2>
                         <ol class="breadcrumb">
                             <li><a href="/">Ana Sayfa</a></li>
                             <li class="active">User</li>
@@ -52,13 +52,13 @@
                                     <table class="table" cellpadding="3" width="100%">
                                         <tr class="text-left">
 
-                                            <th>Accommodation</th>
-                                            <th>Rate</th>
-                                            <th>Subject</th>
-                                            <th>Comment</th>
-                                            <th>Status</th>
-                                            <th>Date</th>
-                                            <th>Detail</th>
+                                            <th>Konaklama</th>
+                                            <th>Puan</th>
+                                            <th>Konu</th>
+                                            <th>Yorum</th>
+                                            <th>Durum</th>
+                                            <th>Tarih</th>
+                                            <th></th>
                                         </tr>
                                         {% for rs in comments %}
                                             <tr class="text-left">
@@ -74,8 +74,8 @@
                                                 <td>{{ rs.status }}</td>
                                                 <td>{{ rs.create_at.date }}</td>
                                                 <td>
-                                                    <a class="aa-secondary-btn"
-                                                       href="/accommodation/deletecomment/{{ rs.id }}"
+                                                    <a class="btn btn-danger"
+                                                       href="/user/deletecomment/{{ rs.id }}"
                                                        onclick="return confirm('Silinecek ! Emin misin?')">Sil</a>
                                                 </td>
                                             </tr>

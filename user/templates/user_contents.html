@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="aa-property-header-inner">
-                        <h2>Contents</h2>
+                        <h2>KULLANICI PANELİ</h2>
                         <ol class="breadcrumb">
                             <li><a href="/">Ana Sayfa</a></li>
                             <li class="active">user</li>
@@ -49,50 +49,11 @@
                             </div>
                             <div class="col-md-9">
                              {% if user.is_staff %}
-                                <h2>İÇERİKLERİM <a class="aa-secondary-btn" href="/user/addcontent/">+Ekle</a></h2>
-                                <div style="margin-top: 10px; ">
-                                    <table class="table" cellpadding="3" width="100%">
-                                        <tr class="text-left">
-
-                                            <th>Thumbnail</th>
-                                            <th>Başlık</th>
-                                            <th>Türü</th>
-                                            <th>Galeri</th>
-                                            <th>Durum</th>
-                                            <th>Tarih</th>
-                                            <th>Düzenle</th>
-                                            <th>Sil</th>
-                                        </tr>
-                                        {% for rs in contents %}
-                                            <tr class="text-left">
-                                                <td><img src="{{ rs.thumbnail.url }}" style="width: 60px;"></td>
-                                                <td>{{ rs.title }}</td>
-                                                <td>{{ rs.type }}</td>
-                                                <td><a class="aa-view-btn" href="javascript:" onclick="window.open('/user/contentaddimage/{{ rs.id }}','gallery','height=600,width=800,top=50,left=150')" style="padding: 5px"> <i class="fa fa-picture-o"></i> Galeri</a></td>
-                                                <td>{{ rs.status }}</td>
-                                                <td>{{ rs.create_at.date }}</td>
-                                                <td>
-                                                    <a class="aa-secondary-btn" href="/user/contentedit/{{ rs.id }}">Düzenle</a>
-                                                </td>
-                                                <td>
-                                                    <a class="aa-secondary-btn"
-                                                       href="/user/contentdelete/{{ rs.id }}"
-                                                       onclick="return confirm('Silinecek ! Emin misin?')">Sil</a>
-                                                </td>
-                                            </tr>
-                                        {% endfor %}
-                                        {% if messages %}
-                                            {% for message in messages %}
-                                                <div class="alert alert-{{ message.tags }}" role="alert">
-                                                    {{ message }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </table>
-                                </div>
+                                  {% include 'user_content_is_staff.html' %}
                                  {% else %}
-                                 <h2>İÇERİKLERİM</h2>
-                                 <p>BLOG YAZMANIZ İÇİN ADMİN OLMANIZ GEREKİYOR</p>
+                                 <div class="alert alert-danger" role="alert">
+                                     <p>İÇERİKLERİ SADECE ADMİNLER GÖREBİLİR.</p>
+                                 </div>
                             {% endif %}
                             </div>
                         </div>

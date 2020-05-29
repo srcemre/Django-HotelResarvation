@@ -1,26 +1,38 @@
 {% load static %}
 <section id="aa-slider">
     <div class="aa-slider-area">
-      <!-- Top slider -->
-      <div class="aa-top-slider">
+        <!-- Top slider -->
+        <div class="aa-top-slider">
 
-          {% for rs in sliderdata %}
-            <!-- Top slider single slide -->
-            <div class="aa-top-slider-single">
-                <img src="{{ rs.thumbnail.url }}" alt="img">
-                <!-- Top slider content -->
-                <div class="aa-top-slider-content">
-                    <span class="aa-top-slider-catg">{{ rs.category }}</span>
-                    <h2 class="aa-top-slider-title">{{ rs.title }}</h2>
-                    <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>{{ rs.address }} - {{ rs.city }}</p>
-                    <span class="aa-top-slider-off">{{ rs.description }} {% if rs.star %} - {{ rs.star }}  Stars {% endif %} </span>
+            {% for rs in sliderdata %}
+                <!-- Top slider single slide -->
+                <div class="aa-top-slider-single">
+                    <img src="{{ rs.thumbnail.url }}" alt="img">
+                    <!-- Top slider content -->
+                    <div class="aa-top-slider-content">
+                        <span class="aa-top-slider-catg">{{ rs.category }}</span>
+                        <h2 class="aa-top-slider-title">{{ rs.title }}</h2>
+                        <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>{{ rs.address }}
+                            - {{ rs.city }}</p>
+                        <span class="aa-top-slider-off">
+                            {% if rs.star %}
+                                <i class="fa fa-star{% if rs.star < 1 %}-o{% endif %}"></i>
+                                <i class="fa fa-star{% if rs.star < 2 %}-o{% endif %}"></i>
+                                <i class="fa fa-star{% if rs.star < 3 %}-o{% endif %}"></i>
+                                <i class="fa fa-star{% if rs.star < 4 %}-o{% endif %}"></i>
+                                <i class="fa fa-star{% if rs.star < 5 %}-o{% endif %}"></i>
+                            {% else %}
+                                <i class="fa fa-hotel"></i>
+                            {% endif %}
 
-                    <p class="aa-top-slider-price">100$</p>
-                    <a href="/accommodation/{{ rs.id }}/{{ rs.slug }}" class="aa-top-slider-btn">Detaylar <span class="fa fa-angle-double-right"></span></a>
+                            <p class="aa-top-slider-price"><i class="fa fa-dollar"></i>{{ rs.get_room_max_price }}
+                            - {{ rs.get_room_min_price }}</p>
+                        <a href="/accommodation/{{ rs.id }}/{{ rs.slug }}" class="aa-top-slider-btn">Detaylar <span
+                                class="fa fa-angle-double-right"></span></a>
+                    </div>
+                    <!-- / Top slider content -->
                 </div>
-                <!-- / Top slider content -->
-            </div>
-            <!-- / Top slider single slide -->
-          {% endfor %}
-    </div>
+                <!-- / Top slider single slide -->
+            {% endfor %}
+        </div>
 </section>

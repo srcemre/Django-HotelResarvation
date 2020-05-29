@@ -21,8 +21,8 @@
                             <div class="aa-header-right">
                                 {% if user.id %}
                                     <!-- Profile resmi -->
-                                    <img src="{{ current_user.image.url }}" height="20 px"/>
-                                    <a href="/user/" class="aa-register">{{ user.username }}</a>
+                                    <img src="{{ request.user.userprofile.image.url }}" height="20 px"/>
+                                    <a href="/user/" class="aa-register">{{ request.user.username }}</a>
                                     <a href="/logout/" class="aa-login">Log Out</a>
                                 {% else %}
                                     <a href="/register/" class="aa-register">Register</a>

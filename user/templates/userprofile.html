@@ -13,12 +13,12 @@
 {% endblock %}
 {% block slider %}
 
-    <section id="aa-property-header" style="background-image: url('{{ current_user.image.url }}')">
+    <section id="aa-property-header" style="background-image: url('{{ current_user.image.url }}');">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="aa-property-header-inner">
-                        <h2>Hesap Bilgileri</h2>
+                        <h2>Kullanıcı Paneli</h2>
                         <ol class="breadcrumb">
                             <li><a href="/">Ana Sayfa</a></li>
                             <li class="active">user</li>
@@ -49,10 +49,6 @@
                                 <h2>KULLANICI BİLGİLERİ</h2>
                                 <div style="margin-top: 10px; ">
                                     <table class="table" cellpadding="3" width="100%">
-                                        <!--<tr>
-                                            <th>Picture</th>
-                                             <th><img src="{{ current_user.image.url }}" width="40px"/></th>
-                                        </tr>-->
                                         <tr class="text-left">
                                             <th>Name</th>
                                             <td>{{ current_user.username }}</td>
@@ -77,6 +73,14 @@
                                             <th>Country</th>
                                             <td>{{ current_user.country }}</td>
                                         </tr>
+                                        <tr>
+                                            <th></th>
+                                            <th>
+                                                <a href="/user/update" class="btn aa-secondary-btn">GÜNCELLE</a>
+                                                <a href="/user/password" class="btn aa-secondary-btn">ŞİFRE DEĞİŞTİR</a>
+                                            </th>
+                                        </tr>
+
                                     </table>
                                 </div>
                             </div>

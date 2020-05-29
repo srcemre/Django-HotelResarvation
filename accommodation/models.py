@@ -3,6 +3,7 @@ from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
+from django.db.models import Min, Max
 from django.forms import ModelForm
 from django.urls import reverse
 from django.utils.safestring import mark_safe
@@ -50,19 +51,19 @@ class Accommodation(models.Model):
         ('False', 'Hayır'),
     )
     STAR = (
-        ('0', '-'),
-        ('1', '(1) *'),
-        ('2', '(2) **'),
-        ('3', '(3) ***'),
-        ('4', '(4) ****'),
-        ('5', '(5) *****'),
+        (0, '-'),
+        (1, '(1) *'),
+        (2, '(2) **'),
+        (3, '(3) ***'),
+        (4, '(4) ****'),
+        (5, '(5) *****'),
     )
     category    = models.ForeignKey(Category, on_delete=models.CASCADE)
     title       = models.CharField(max_length=100) #charfield = uzunluk
     keywords    = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     thumbnail   = models.ImageField(blank=True, upload_to='images', default='images/null.jpg')
-    star        = models.CharField(max_length=1, blank=True, choices=STAR)
+    star        = models.IntegerField(blank=True, choices=STAR)
     address     = models.TextField(max_length=150)
     email       = models.CharField(max_length=30)
     phone       = models.PositiveSmallIntegerField()
@@ -83,6 +84,14 @@ class Accommodation(models.Model):
 
     def get_absolute_url(self):
         return reverse('accommodation_detail', kwargs={'slug': self.slug})
+
+    def get_room_min_price(self):
+        rooms = Room.objects.filter(hotel_id=self.id)
+        return rooms.aggregate(Min('price'))['price__min']
+
+    def get_room_max_price(self):
+        rooms = Room.objects.filter(hotel_id=self.id)
+        return rooms.aggregate(Max('price'))['price__max']
 
 class Room(models.Model):
     STATUS = (
@@ -120,13 +129,18 @@ class Comment(models.Model):
         ('True', 'Evet'),
         ('False', 'Hayır'),
     )
+    STATUS1 = (
+        ('True', 'Evet'),
+        ('False', 'Hayır'),
+    )
 
     hotel   = models.ForeignKey(Accommodation, on_delete=models.CASCADE)
     user    = models.ForeignKey(User, on_delete=models.CASCADE)
-    subject = models.CharField(max_length=50, blank=True)  # charfield = uzunluk
+    subject = models.CharField(max_length=50, blank=True)
     comment = models.CharField(max_length=200, blank=True)
     rate    = models.IntegerField()
     status  = models.CharField(max_length=10, choices=STATUS, default='New')
+    publish  = models.CharField(max_length=10, choices=STATUS1, default='False')
     ip      = models.CharField(max_length=20, blank=True)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)

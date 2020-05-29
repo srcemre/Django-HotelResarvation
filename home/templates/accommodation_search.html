@@ -6,6 +6,21 @@
 
 {% block head %}
     <link rel="shortcut icon" href="{{ setting.icon.url }}" type="image/x-icon">
+    <script>
+        $(function () {
+            $("#query").autocomplete({
+                source: "/search_auto/",
+                select: function (event, ui) { //item selected
+                    AutoCompleteSelectHandler(event, ui)
+                },
+                minLength: 2,
+            });
+        });
+
+        function AutoCompleteSelectHandler(event, ui) {
+            var selectedObj = ui.item;
+        }
+    </script>
 {% endblock %}
 
 
@@ -14,46 +29,125 @@
 {% endblock %}
 {% block slider %}
     <section id="aa-property-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-property-header-inner">
-            <h2>Hakkımızda</h2>
-            <ol class="breadcrumb">
-            <li><a href="/">Ana Sayfa</a></li>
-            <li class="active">Arama</li>
-          </ol>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-property-header-inner">
+                        <h2>Hakkımızda</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="/">Ana Sayfa</a></li>
+                            <li class="active">Search</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 {% endblock %}
 {% block content %}
 
-    <div class="section">
+    <!-- Start Properties  -->
+    <section id="aa-properties">
         <div class="container">
-            <div class="container">
-                <table cellpadding="3" width="1200">
-                    <tr>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>Category</th>
-                        <th>Price</th>
-                    </tr>
-                    {% for rs in accommodations %}
-                        <tr>
-                            <td><a href="/accommodation/{{ rs.id }}/{{ rs.slug }}"><img src="{{ rs.thumbnail.url }}" style="width: 200px" alt=""></a></td>
-                            <td><h4><a href="/accommodation/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a>
-                            </h4></td>
-                            <td><a href="/category/{{ rs.category.id }}/{{ rs.category.slug }}">{{ rs.category }}</a>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </table>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="aa-properties-content">
+                        <!-- start properties content head -->
+                        <div class="aa-properties-content-head">
+                            <div class="aa-properties-content-head-right">
+                                <a id="aa-grid-properties" href="#"><span class="fa fa-th"></span></a>
+                                <a id="aa-list-properties" href="#"><span class="fa fa-list"></span></a>
+                            </div>
+                        </div>
+
+                        <!-- Start properties content body -->
+                        <div class="aa-properties-content-body">
+                            <ul class="aa-properties-nav">
+                                {% for rs in accommodations %}
+                                    <li>
+                                        <article class="aa-properties-item">
+                                            <div>
+                                                <a href="/accommodation/{{ rs.id }}/{{ rs.slug }}"
+                                                   class="aa-properties-item-img">
+                                                    <img style="width: 360px; height: 240px"
+                                                         src="{{ rs.thumbnail.url }}" alt="img">
+                                                </a>
+                                                <div class="aa-properties-item-content">
+                                                    <div class="aa-properties-info">
+                                                        <span>{{ rs.category }}</span>
+                                                        <span>
+                                                {% if rs.star %}
+                                                    <i class="fa fa-star{% if rs.star < 1 %}-o{% endif %}"></i>
+                                                    <i class="fa fa-star{% if rs.star < 2 %}-o{% endif %}"></i>
+                                                    <i class="fa fa-star{% if rs.star < 3 %}-o{% endif %}"></i>
+                                                    <i class="fa fa-star{% if rs.star < 4 %}-o{% endif %}"></i>
+                                                    <i class="fa fa-star{% if rs.star < 5 %}-o{% endif %}"></i>
+                                                {% else %}
+                                                    <i class="fa fa-hotel"></i>
+                                                {% endif %}
+                                            </span>
+                                                        <span><i class="fa fa-map-marker"></i> {{ rs.city }}</span>
+                                                    </div>
+                                                    <div class="aa-properties-about">
+                                                        <h3>
+                                                            <a href="/accommodation/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a>
+                                                        </h3>
+                                                        <p>{{ rs.description }}</p>
+                                                    </div>
+                                                    <div class="aa-properties-detial">
+                                            <span class="aa-price">
+                                                <i class="fa fa-dollar"></i>{{ rs.get_room_min_price }} - {{ rs.get_room_max_price }}
+                                            </span>
+                                                        <a href="/accommodation/{{ rs.id }}/{{ rs.slug }}"
+                                                           class="aa-secondary-btn">Detayları
+                                                            Gör</a>
+                                                    </div>
+                                                </div>
+                                        </article>
+                                    </li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Start properties sidebar -->
+                <div class="col-md-4">
+                    <aside class="aa-properties-sidebar">
+                        <!-- Start Single properties sidebar -->
+                        <div class="aa-properties-single-sidebar">
+                            <h3>İdeal Otelinizi Bulun !</h3>
+                            <form action="/search/" method="post">
+                                {% csrf_token %}
+                                <div class="aa-single-advance-search">
+                                    <input id="query" name="query" type="text" placeholder="OTEL ARA">
+                                </div>
+                                {% load mptt_tags %}
+                                <div class="aa-single-advance-search">
+                                    <select name="catid">
+                                        <option value="0" selected>KATEGORİ</option>
+                                        {% recursetree category %}
+                                            <option value="{{ node.id }}">{{ node.title }}</option>
+                                            {% if not node.is_leaf_node %}
+                                                {{ children }}
+                                            {% endif %}
+                                        {% endrecursetree %}
+                                    </select>
+                                </div>
+                                <div class="aa-single-advance-search">
+                                    <input type="submit" value="ARA" class="aa-search-btn">
+                                </div>
+                            </form>
+                        </div>
+                        <!-- END properties sidebar -->
+                </div>
+                </aside>
             </div>
         </div>
-    </div>
+        </div>
+    </section>
+    <!-- / Properties  -->
 
 {% endblock %}
 

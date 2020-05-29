@@ -63,10 +63,10 @@ class ContactForm(ModelForm):
         model = ContactFormMessage
         fields = ['name', 'email', 'subject', 'message']
         widgets = {
-            'name': TextInput(attrs={'class': 'aa-contact-area', 'placeholder': 'Ad & Soyad'}),
-            'subject': TextInput(attrs={'class': 'aa-contact-area', 'placeholder': 'Konu'}),
-            'email': TextInput(attrs={'class': 'aa-contact-area', 'placeholder': 'E-Posta'}),
-            'message': TextInput(attrs={'class': 'aa-contact-area', 'placeholder': 'Mesaj Yaz'}),
+            'name': TextInput(attrs={'class': 'table', 'placeholder': 'Ad & Soyad'}),
+            'subject': TextInput(attrs={'class': 'table', 'placeholder': 'Konu'}),
+            'email': TextInput(attrs={'class': 'table', 'placeholder': 'E-Posta'}),
+            'message': TextInput(attrs={'class': 'table', 'placeholder': 'Mesaj Yaz'}),
         }
 
 
@@ -79,16 +79,37 @@ class UserProfile(models.Model):
     image = models.ImageField(blank=True, upload_to='images/users/', default='images/users/user.png')
 
     def __str__(self):
-        return '['+self.user.username+'] '+self.user.first_name+' '+self.user.last_name
+        return '[' + self.user.username + '] ' + self.user.first_name + ' ' + self.user.last_name
 
     def username(self):
-        return '['+self.user.username+'] '+self.user.first_name+' '+self.user.last_name
+        return '[' + self.user.username + '] ' + self.user.first_name + ' ' + self.user.last_name
+
+    def fullname(self):
+        return self.user.first_name + ' ' + self.user.last_name
 
     def image_tag(self):
         return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
+
     image_tag.short_descripton = 'Image'
+
 
 class UserProfileForm(ModelForm):
     class Meta:
         model = UserProfile
         fields = ['phone', 'address', 'city', 'country', 'image']
+
+
+class Faq(models.Model):
+    STATUS = (
+        ('True', 'Evet'),
+        ('False', 'Hayır'),
+    )
+    ordernumber = models.IntegerField()
+    question = models.CharField(max_length=150)
+    answer = models.TextField()
+    status = models.CharField(max_length=10, choices=STATUS)
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.question

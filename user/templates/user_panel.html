@@ -3,21 +3,21 @@
     <div class="aa-blog-sidebar-single">
         <div class="aa-banner-ads">
             <a href="#">
-                <img src="{{ current_user.image.url }}" alt="profile_picture">
+                <img src="{{ request.user.userprofile.image.url }}" alt="profile_picture">
             </a>
-            <h2>{{ current_user.user.username }}</h2>
+            <h4 style="color: midnightblue;"><b>{{ request.user.userprofile.username }}</b></h4>
         </div>
     </div>
 
     <!-- Start single sidebar -->
     <div class="aa-blog-sidebar-single">
         <h2>Kullanıcı Paneli</h2>
-        <ul class="cke_menu_panel">
-            <li><a href="/user/"><i class="fa fa-user"></i> Kullanıcı Bilgileri</a></li>
-            <li><a href=""><i class="fa fa-credit-card"></i> Rezarvasyonlarım</a></li>
-            <li><a href=""><i class="fa fa-comments"></i> Yorumlarım</a></li>
-            <li><a href=""><i class="fa fa-thumbs-up"></i> Favorilerim</a></li>
-            <li><a href="/logout/"><i class="fa fa-sign-out"></i> Çıkış</a></li>
+        <ul class="ui-menu">
+            <li><a class="btn aa-secondary-btn" style="width: 100%" href="/user/"><i class="fa fa-user"></i> Kullanıcı Bilgileri</a></li>
+            <li><a class="btn aa-secondary-btn" style="width: 100%" href="/user/reservations/"><i class="fa fa-credit-card"></i> Rezarvasyonlarım</a></li>
+            <li><a class="btn aa-secondary-btn" style="width: 100%" href="/user/comments/"><i class="fa fa-comments"></i> Yorumlarım</a></li>
+            <li><a class="btn aa-secondary-btn" style="width: 100%" href="/user/contents/"><i class="fa fa-archive"></i> İçeriklerim</a></li>
+            <li><a class="btn btn-danger" style="width: 100%" href="/logout/"><i class="fa fa-sign-out"></i> Çıkış</a></li>
         </ul>
     </div>
 </aside>

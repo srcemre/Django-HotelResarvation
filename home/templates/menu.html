@@ -14,7 +14,7 @@
                 </button>
                 <!-- LOGO -->
                 <!-- Text based logo -->
-                <a class="navbar-brand aa-logo" href="/"> EMRE <span>SARAÇ</span></a>
+                <a class="navbar-brand aa-logo" href="/"> FAST <span>BOOKING</span></a>
                 <!-- Image based logo -->
                 <!-- <a class="navbar-brand aa-logo-img" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
             </div>
@@ -24,10 +24,11 @@
 
                     <!-- item  class="active" -->
                     {% if page == 'home' %}
-                        <li class="active"><a href="/">ANA SAYFA</a></li>
+                        <li class="active">
                     {% else %}
-                        <li><a href="/">ANA SAYFA</a></li>
+                        <li>
                     {% endif %}
+                    <a href="/">ANA SAYFA</a></li>
 
 
                     <!-- item -->
@@ -54,41 +55,47 @@
                         </li>
 
                     </ul>
-                    <!--
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="/oteller">OTELLER</a></li>
-                        <li><a href="/pansiyonlar">PANSİYONLAR</a></li>
-                        <li><a href="/apartmanlar">APARTMANLAR</a></li>
-                    </ul> -->
                     </li>
 
                     <!-- item -->
-                    {% if page == 'resimler' %}
-                        <li class="active"><a href="/resimler">RESİMLER</a></li>
+                    {% if page == 'content' %}
+                        <li class="active">
                     {% else %}
-                        <li><a href="/resimler">RESİMLER</a></li>
+                        <li>
                     {% endif %}
+                        <a href="/content">BLOG</a></li>
 
                     <!-- item -->
                     {% if page == 'hakkimizda' %}
-                        <li class="active"><a href="/hakkimizda">HAKKIMIZDA</a></li>
+                        <li class="active">
                     {% else %}
-                        <li><a href="/hakkimizda">HAKKIMIZDA</a></li>
+                        <li>
                     {% endif %}
+                        <a href="/hakkimizda">HAKKIMIZDA</a></li>
 
                     <!-- item -->
                     {% if page == 'referanslar' %}
-                        <li class="active"><a href="/referanslar">REFERANSLAR</a></li>
+                        <li class="active">
                     {% else %}
-                        <li><a href="/referanslar">REFERANSLAR</a></li>
+                        <li>
                     {% endif %}
+                        <a href="/referanslar">REFERANSLAR</a></li>
 
                     <!-- item -->
                     {% if page == 'iletisim' %}
-                        <li class="active"><a href="/iletisim">İLETİŞİM</a></li>
+                        <li class="active">
                     {% else %}
-                        <li><a href="/iletisim">İLETİŞİM</a></li>
+                        <li>
                     {% endif %}
+                        <a href="/iletisim">İLETİŞİM</a></li>
+
+                     <!-- item -->
+                    {% if page == 'faq' %}
+                        <li class="active">
+                    {% else %}
+                        <li>
+                    {% endif %}
+                        <a href="/faq">SSS <i class="fa fa-info-circle"></i></a></li>
 
                 </ul>
             </div><!--/.nav-collapse -->

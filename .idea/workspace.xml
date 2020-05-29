@@ -2,27 +2,204 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a209081-c632-4557-ad02-a2c8f41d68b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/migrations/0002_auto_20200514_0444.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/img/img/property-header-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/user_content_is_staff.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/hotelReservation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hotelReservation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/blog-archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/blog-archive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/blog-single.html" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/blog-single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/css/nouislider.css" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/css/nouislider.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/css/theme-color/bridge-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/css/theme-color/bridge-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/css/theme-color/dark-red-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/css/theme-color/dark-red-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/css/theme-color/default-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/css/theme-color/default-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/css/theme-color/green-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/css/theme-color/green-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/css/theme-color/orange-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/css/theme-color/orange-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/css/theme-color/pink-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/css/theme-color/pink-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/css/theme-color/purple-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/css/theme-color/purple-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/css/theme-color/red-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/css/theme-color/red-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/css/theme-color/violet-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/css/theme-color/violet-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/css/theme-color/yellow-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/css/theme-color/yellow-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/gallery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/js/nouislider.js" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/js/nouislider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/properties-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/properties-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/properties.html" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/properties.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/scss/base/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/scss/base/_base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/scss/base/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/scss/base/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/scss/base/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/scss/base/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/scss/layouts/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/scss/layouts/_footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/scss/layouts/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/scss/layouts/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/scss/layouts/_nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/scss/layouts/_nav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/scss/modules/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/scss/modules/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/scss/modules/_responsive.scss" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/scss/modules/_responsive.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/scss/modules/_sections.scss" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/scss/modules/_sections.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/scss/modules/_theme-color.scss" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/scss/modules/_theme-color.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/scss/modules/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/scss/modules/_typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/scss/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0002_hotel.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0002_hotel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0003_auto_20200328_1801.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0003_auto_20200328_1801.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0004_auto_20200328_1804.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0004_auto_20200328_1804.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0005_room.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0005_room.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0006_auto_20200328_1817.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0006_auto_20200328_1817.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0007_auto_20200329_1534.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0007_auto_20200329_1534.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0008_hotel_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0008_hotel_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0009_auto_20200329_1614.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0009_auto_20200329_1614.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0010_auto_20200329_1621.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0010_auto_20200329_1621.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0011_auto_20200329_1701.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0011_auto_20200329_1701.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0012_auto_20200329_1711.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0012_auto_20200329_1711.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0013_auto_20200329_1851.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0013_auto_20200329_1851.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0014_auto_20200405_0054.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0014_auto_20200405_0054.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0015_auto_20200409_2230.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0015_auto_20200409_2230.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0016_auto_20200409_2258.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0016_auto_20200409_2258.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0017_auto_20200505_2207.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0017_auto_20200505_2207.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0018_auto_20200506_0113.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0018_auto_20200506_0113.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0019_auto_20200510_1730.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0019_auto_20200510_1730.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0020_auto_20200510_1731.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0020_auto_20200510_1731.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0021_auto_20200510_1740.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0021_auto_20200510_1740.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0022_comment_publish.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0022_comment_publish.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0023_auto_20200518_1816.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0023_auto_20200518_1816.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0024_auto_20200518_1816.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0024_auto_20200518_1816.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/migrations/0025_auto_20200523_1530.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/migrations/0025_auto_20200523_1530.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accommodation/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accommodation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accommodation/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0002_content_author.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/migrations/0002_content_author.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0003_auto_20200515_0832.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/migrations/0003_auto_20200515_0832.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0004_auto_20200515_1043.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/migrations/0004_auto_20200515_1043.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0005_auto_20200518_1354.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/migrations/0005_auto_20200518_1354.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0002_auto_20200329_1909.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/migrations/0002_auto_20200329_1909.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0003_auto_20200405_0054.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/migrations/0003_auto_20200405_0054.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0004_auto_20200405_0206.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/migrations/0004_auto_20200405_0206.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0005_auto_20200405_0214.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/migrations/0005_auto_20200405_0214.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0006_auto_20200409_2230.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/migrations/0006_auto_20200409_2230.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0007_userprofile.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/migrations/0007_userprofile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0008_auto_20200513_1935.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/migrations/0008_auto_20200513_1935.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0009_faq.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/migrations/0009_faq.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0010_auto_20200518_1356.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/migrations/0010_auto_20200518_1356.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0011_faq_ordernumber.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/migrations/0011_faq_ordernumber.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0012_auto_20200518_1730.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/migrations/0012_auto_20200518_1730.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0013_auto_20200523_1522.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/migrations/0013_auto_20200523_1522.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/css/lightbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/lightbox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/css/nouislider.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/nouislider.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/css/theme-color/bridge-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/theme-color/bridge-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/css/theme-color/dark-red-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/theme-color/dark-red-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/css/theme-color/default-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/theme-color/default-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/css/theme-color/green-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/theme-color/green-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/css/theme-color/orange-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/theme-color/orange-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/css/theme-color/pink-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/theme-color/pink-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/css/theme-color/purple-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/theme-color/purple-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/css/theme-color/red-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/theme-color/red-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/css/theme-color/violet-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/theme-color/violet-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/css/theme-color/yellow-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/theme-color/yellow-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/img/promo-banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/img/slider/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/img/img/promo-banner.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/img/slider/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/img/testimonial-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/img/testimonial-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/img/testimonial-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/img/testimonial-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/js/nouislider.js" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/js/nouislider.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/accommodation.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/accommodation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/accommodation_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/accommodation_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/accommodation_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/accommodation_search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/content_blog_archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/content/templates/content_blog_archive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/content_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/content/templates/content_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/faq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/hakkimizda.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/hakkimizda.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/referanslar.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/referanslar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelReservation/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotelReservation/asgi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotelReservation/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotelReservation/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotelReservation/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotelReservation/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelReservation/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotelReservation/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/migrations/0002_reservation_reservationroom.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/migrations/0002_reservation_reservationroom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/migrations/0003_auto_20200514_2153.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/migrations/0003_auto_20200514_2153.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/migrations/0004_auto_20200514_2219.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/migrations/0004_auto_20200514_2219.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/templates/reservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/templates/reservation_complated.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservation_complated.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/IMG-20170628-WA0022-01.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/IMG_20180714_181931-01.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/IMG_20180721_164135-01.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/IMG_20180722_183113-01.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/IMG_20180722_192359-01.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/IMG_20180722_194529-01.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/IMG_3081-01.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/IMG_4976-01.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/IMG_5088-01.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/PANO_20180722_180956-01.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/_MG_4414__220917-01.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/_MG_4414__220917-01_uX5Ijlh.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/_MG_4615__220917-02.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/_MG_4615__220917-02_D6vBbAl.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/_MG_5106-01.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/images/content/images/received_1624874034225516-01.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/change_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_addcontent.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_addcontent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_adminsettings.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_adminsettings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_comments.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_comments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_content_gallary.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_content_gallary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_contents.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_contents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_reservations.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_reservations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_reservations_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_reservations_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/userprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/userprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,23 +220,27 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="db [2]" type="feb32156:DbDataSourceImpl" />
-        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -87,24 +268,27 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Django-HotelResarvation-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/static/img/slider" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\uploads\images\users" />
-      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\uploads\images" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\home\static\img\slider" />
       <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\reservation" />
       <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\user\templates" />
       <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\user" />
       <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\home\templates" />
-      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\home" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\home\static\img\img" />
+      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\content\templates" />
+      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\uploads\images\users" />
+      <recent name="C:\Users\esara\Desktop\PythonProje\hotelReservation\uploads\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -174,6 +358,13 @@
       <workItem from="1589206095314" duration="8549000" />
       <workItem from="1589382295106" duration="22762000" />
       <workItem from="1589421006328" duration="1658000" />
+      <workItem from="1590402064121" duration="13012000" />
+      <workItem from="1590430291920" duration="651000" />
+      <workItem from="1590494923876" duration="14943000" />
+      <workItem from="1590539301659" duration="6961000" />
+      <workItem from="1590590551610" duration="8067000" />
+      <workItem from="1590602587087" duration="467000" />
+      <workItem from="1590760561991" duration="315000" />
     </task>
     <task id="LOCAL-00001" summary="14. Videoya kadar ilerlendi">
       <created>1586046590982</created>
@@ -195,6 +386,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="14. Videoya kadar ilerlendi" />
     <option name="LAST_COMMIT_MESSAGE" value="14. Videoya kadar ilerlendi" />
@@ -204,10 +405,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1588716704026" />
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589422440789">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590430326319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589422440789" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590430326319" />
     <state x="709" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585429406654">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -260,14 +461,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585504981733" />
-    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1589421948051">
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1590537275428">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1589421948051" />
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1590537275428" />
     <state x="590" y="373" key="Performance.Activity.Monitor" timestamp="1585409204503">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="590" y="373" key="Performance.Activity.Monitor/0.0.1920.1040@0.0.1920.1040" timestamp="1585409204503" />
+    <state x="725" y="231" key="RollbackChangesDialog" timestamp="1590536229716">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="725" y="231" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590536229716" />
     <state x="811" y="410" width="326" height="234" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1589422011287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -276,10 +481,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="629" y="323" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589422464508" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1589421007611">
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1590760561447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589421007611" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590760561447" />
     <state x="609" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589207758433">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -288,9 +493,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586046700119" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1589420695427">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1590407211863">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589420695427" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590407211863" />
   </component>
 </project>
